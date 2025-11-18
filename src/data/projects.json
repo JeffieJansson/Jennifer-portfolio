@@ -1,28 +1,68 @@
-{
-  "projects": [
-    {
-      "name": "Business site",
-      "image": "https://images.unsplash.com/photo-1557008075-7f2c5efa4cfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2497&q=80",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "JavaScript"
-      ],
-      "netlify": "link",
-      "github": "link"
-    },
-    {
-      "name": "Weather app",
-      "image": "https://images.unsplash.com/photo-1520792532857-293bd046307a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "TypeScript",
-        "APIs"
-      ],
-      "netlify": "link",
-      "github": "link"
+[
+  {
+    "id": "business-site",
+    "title": "Business site",
+    "summary": "A fictional responsive website built with HTML, CSS & JavaScript. Includes hero video, card-based layout, signup form, and interactive hamburger menu. No backend connection — focus on responsive UI and clean code.",
+    "tags": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Spoonacular API"
+    ],
+    "live": "https://frontendproject2025.netlify.app/",
+    "code": "https://github.com/JeffieJansson/frontend-project",
+    "image": {
+      "src": "/src/business.jpg",
+      "alt": "picture of record studio website"
     }
-  ]
-}
+  },
+  {
+    "id": "recipe",
+    "title": "Recipe library",
+    "summary": "Interactive recipe app with search, filter and sort. Uses Spoonacular API. Data normalized and cached in localStorage.",
+    "tags": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Spoonacular API"
+    ],
+    "live": "https://library-recipe.netlify.app/",
+    "code": "https://github.com/JeffieJansson/recipe-library",
+    "image": {
+      "src": "/src/recipe.jpg",
+      "alt": "pictures of food recipes and filtering options"
+    }
+  },
+  {
+    "id": "weather",
+    "title": "Weather app – SMHI API",
+    "summary": "Responsive weather app with current conditions and 5-day forecast for Swedish cities.",
+    "tags": [
+      "HTML5",
+      "CSS3",
+      "TypeScript",
+      "SMHI API"
+    ],
+    "live": "https://project-weather-app-b2.netlify.app/",
+    "code": "https://github.com/marinalendt-png/js-project-weather-app",
+    "image": {
+      "src": "/src/weather.jpg",
+      "alt": "picture of weather app"
+    }
+  },
+  {
+    "id": "extra-1",
+    "title": "Extra project placeholder",
+    "summary": "Hidden until 'See more projects' is clicked.",
+    "tags": [
+      "JS",
+      "HTML"
+    ],
+    "live": "#",
+    "code": "#",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
+      "alt": "Extra"
+    }
+  }
+]
