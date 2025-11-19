@@ -19,7 +19,7 @@
   {
     "id": "recipe",
     "title": "Recipe library",
-    "summary": "Interactive recipe app with search, filter and sort. Uses Spoonacular API. Data normalized and cached in localStorage.",
+    "summary": "An interactive recipe web app with possibility to search, filter and sort recipes by cuisine, diet, time and popularity using Spoonacular API. Data normalized and cached in localStorage for better performance and offline access",
     "tags": [
       "HTML5",
       "CSS3",
@@ -36,7 +36,7 @@
   {
     "id": "weather",
     "title": "Weather app – SMHI API",
-    "summary": "Responsive weather app with current conditions and 5-day forecast for Swedish cities.",
+    "summary": "A responsive weather app displaying current weather conditions and 5-day forecasts for multiple Swedish cities using the SMHI API. Built collaboratively using Git and TypeScript for safer data handling and cleaner code.",
     "tags": [
       "HTML5",
       "CSS3",

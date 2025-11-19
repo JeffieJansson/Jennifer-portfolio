@@ -1,3 +1,4 @@
+// src/App.jsx
 import { Hero } from "./sections/Hero.jsx";
 import { Tech } from "./sections/Tech.jsx";
 import { Skills } from "./sections/Skills.jsx";
@@ -11,8 +12,8 @@ export const App = () => {
       <Hero />
       <main>
         <Tech />
-        <Skills />
         <Projects />
+        <Skills />
         <Journey />
         <Contact />
       </main>
