@@ -1,0 +1,55 @@
+{
+  "tech": [
+    "JavaScript", 
+    "CSS", 
+    "TypeScript", 
+    "HTML", 
+    "React", 
+    "Web Accessibility", 
+    "JSX", 
+    "React Hooks", 
+    "Node.js", 
+    "MongoDB", 
+    "Mob-programming", 
+    "Pair-programming", 
+    "GitHub"
+  ],
+"code": [
+  "HTML", 
+  "CSS", 
+  "JavaScript", 
+  "GitHub", 
+  "API Integration", 
+  "DOM Manipulation", 
+  "localStorage", 
+  "Responsive Design", 
+  "Accessibility"
+],
+  "toolbox": [
+    "VS Code", 
+    "R-Studio", 
+    "Postman", 
+    "GitHub", 
+    "Figma", 
+    "BigQuery", 
+    "Looker Studio", 
+    "GTM", 
+    "GTA", 
+    "GSC", 
+    "Figma"
+  ],
+  "upcoming": [
+    "Node.js", 
+    "MongoDB", 
+    "Typescript", 
+    "Styled Components"
+  ],
+  "more": [
+    "SEO Optimization", 
+    "Data Visualization", 
+    "Digital Marketing", 
+    "Project Planning", 
+    "UX Writing", 
+    "Agile Methodology"
+  ]
+}

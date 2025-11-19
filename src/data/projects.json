@@ -12,7 +12,7 @@
     "live": "https://frontendproject2025.netlify.app/",
     "code": "https://github.com/JeffieJansson/frontend-project",
     "image": {
-      "src": "/src/business.jpg",
+      "src": "/public/business.jpg",
       "alt": "picture of record studio website"
     }
   },
@@ -29,7 +29,7 @@
     "live": "https://library-recipe.netlify.app/",
     "code": "https://github.com/JeffieJansson/recipe-library",
     "image": {
-      "src": "/src/recipe.jpg",
+      "src": "/public/recipe.jpg",
       "alt": "pictures of food recipes and filtering options"
     }
   },
@@ -46,7 +46,7 @@
     "live": "https://project-weather-app-b2.netlify.app/",
     "code": "https://github.com/marinalendt-png/js-project-weather-app",
     "image": {
-      "src": "/src/weather.jpg",
+      "src": "/public/weather.jpg",
       "alt": "picture of weather app"
     }
   },

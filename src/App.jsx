@@ -1,8 +1,21 @@
+import { Hero } from "./sections/Hero.jsx";
+import { Tech } from "./sections/Tech.jsx";
+import { Skills } from "./sections/Skills.jsx";
+import { Projects } from "./sections/Projects.jsx";
+import { Journey } from "./sections/Journey.jsx";
+import { Contact } from "./sections/Contact.jsx";
+
 export const App = () => {
   return (
-    <>
-      <h1>Portfolio</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, laborum! Maxime animi nostrum facilis distinctio neque labore consectetur beatae eum ipsum excepturi voluptatum, dicta repellendus incidunt fugiat, consequatur rem aperiam.</p>
-    </>
-  )
-}
+    <div className="app">
+      <Hero />
+      <main>
+        <Tech />
+        <Skills />
+        <Projects />
+        <Journey />
+        <Contact />
+      </main>
+    </div>
+  );
+};
