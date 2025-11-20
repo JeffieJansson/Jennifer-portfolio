@@ -6,30 +6,41 @@
     "link": "https://www.linkedin.com/posts/jennifer-jansson_i-veckan-har-det-handlat-om-n%C3%A5got-som-l%C3%A4tt-activity-7395085710417973248-1x9O?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB3H4eMBXAYupsRoNRJuXMD_IcGjMjaH20k",
     "badge": "November 14th, 2025",
     "image": {
-      "src": "/public/pitch.png",
-      "alt": "Code screen"
+      "src": "/public/journey.png",
+      "alt": "Pitch block graphic"
     }
   },
   {
     "id": "post2",
-    "title": "lorem ipsum dolor sit amet",
-    "excerpt": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "title": "API has opened my eyes",
+    "excerpt": "APIs went from alien to practical — small wins that stuck.",
     "link": "#",
-    "badge": "2025",
+    "badge": "September 30th",
     "image": {
-      "src": "/public/journey.png",
-      "alt": "lorem"
+      "src": "./API.png",
+      "alt": "API graphic"
     }
   },
   {
     "id": "post3",
-    "title": "lorem ipsum dolor sit amet",
-    "excerpt": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "title": "Working in Git as a team",
+    "excerpt": "Merging branches, resolving conflicts, collaborating effectively.",
     "link": "#",
-    "badge": "2025",
+    "badge": "October 16th",
     "image": {
-      "src": "/public/resources.png",
-      "alt": "lorem"
+      "src": "./git-merge.png",
+      "alt": "Git merge graphic"
+    }
+  },
+  {
+    "id": "post4",
+    "title": "Accessibility check",
+    "excerpt": "Implemented ARIA roles in a short group project and learned how small changes can make a big impact for users.",
+    "link": "#",
+    "badge": "November 6th",
+    "image": {
+      "src": "./web-accessibility.png",
+      "alt": "web accessibility graphic"
     }
   }
 ]
