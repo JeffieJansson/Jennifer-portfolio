@@ -1,8 +1,8 @@
 // src/sections/Journey.jsx
 import techData from "../data/tech.json";
 
-export const Tech = () => {
-  const techLine = techData.tech.join(", ");
+export const Tech = () => { // Tech component to display technologies
+  const techLine = techData.tech.join(", "); // transform array into comma-separated string
 
   return (
     <section id="tech">

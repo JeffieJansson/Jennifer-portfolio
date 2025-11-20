@@ -2,7 +2,7 @@
 export const Card = ({ project }) => {
   return (
     <article className="card">
-      {project.image && (
+      {project.image && ( // Only render image if it exists
         <img src={project.image.src} alt={project.image.alt} />
       )}
 

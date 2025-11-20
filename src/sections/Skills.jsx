@@ -2,7 +2,7 @@
 import skillsData from "../data/skills.json";
 
 export const Skills = () => {
-  const { code, toolbox, upcoming, more } = skillsData;
+  const { code, toolbox, upcoming, more } = skillsData; //create variables for each skill category
 
   return (
     <section id="skills">
