@@ -1,11 +1,21 @@
 // src/sections/Contact.jsx
-
-import {
+import styled from "styled-components";import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
   StackOverflowIcon,
 } from "../components/Icons.jsx";
+
+const SocialRow = styled.div`
+display: flex;
+align-items: flex-end;
+gap: 32px;
+ a {
+    color: inherit; 
+    text-decoration: none;
+  }
+  svg { width: 32px; height: 32px; }
+`;
 
 export const Contact = () => {
   return (
@@ -36,7 +46,7 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div 
+        <SocialRow 
             className="contact-socials"  
             aria-label="Social media links"> 
           <a
@@ -74,7 +84,7 @@ export const Contact = () => {
           >
             <InstagramIcon />
           </a>
-        </div>
+        </SocialRow>
       </div>
     </section>
   );
