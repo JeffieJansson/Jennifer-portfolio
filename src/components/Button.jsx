@@ -3,18 +3,17 @@ import styled from "styled-components";
 
 // Styled button component for links
 const Button = styled.a`
-  display: inline-flex;
+  display: flex;
+  width: 303px;
+  height: 48px;
+  gap: 16px;
+  padding: 0 16px;
   align-items: center;
-  gap: 0.5rem;
-
-  padding: 0.5rem 1rem;
   border-radius: 12px;
-  border: 1px solid #000;
-
   text-decoration: none;
-  font-weight: 600;
-  color: #000;
-  background: #fff;
+  font-weight: 500;
+  color: #fff;
+  background: #000;
 `;
 
 export default Button;
