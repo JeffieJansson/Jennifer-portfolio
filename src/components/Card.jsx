@@ -1,30 +1,17 @@
-// src/components/Card.jsx
-// card.jsx recieves a project object as prop and displays its details
-export const Card = ({ project }) => {
-  return (
-    <article className="card">
-      {project.image && ( // Only render image if it exists
-        <img src={project.image.src} alt={project.image.alt} />
-      )}
+import styled from "styled-components";
 
-      <h3>{project.title}</h3>
+// (HTML, CSS, API…)
+export const TagsRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+`;
 
-      {project.tags && (     // Check if tags exist
-        <p>
-          {project.tags.join(" · ")} {/* join tags with dot separator for now */}
-        </p>
-      )}
-
-      <p>{project.summary}</p>
-      <p>
-        <a href={project.live} target="_blank" rel="noreferrer">
-          Live demo
-        </a>{" "}
-        |{" "}
-        <a href={project.code} target="_blank" rel="noreferrer">
-          View code
-        </a>
-      </p>
-    </article>
-  );
-};
+// single tag
+export const Tag = styled.span`
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #000;
+  font-size: 0.75rem;
+`;
