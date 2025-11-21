@@ -19,7 +19,7 @@ export const Contact = () => {
           Let’s Talk
         </h2>
         <img
-          src="/footer.jpg"
+          src="/"
           alt="Portrait of Jennifer Jansson"
           className="contact-avatar"
         />
