@@ -1,4 +1,5 @@
 // src/components/Card.jsx
+// card.jsx recieves a project object as prop and displays its details
 export const Card = ({ project }) => {
   return (
     <article className="card">

@@ -36,7 +36,9 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div className="contact-socials" aria-label="Social media links">
+        <div 
+            className="contact-socials"  
+            aria-label="Social media links"> 
           <a
             href="https://www.linkedin.com/in/jennifer-jansson"
             target="_blank"

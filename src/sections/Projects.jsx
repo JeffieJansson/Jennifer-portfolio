@@ -8,7 +8,8 @@ export const Projects = () => { // Projects component to display list of project
       <h2>Featured projects</h2>
 
       {projects.map((project) => ( //loop through projects data and render each project
-        <Card key={project.id} project={project} /> // Use Card component for each project
+        <Card key={project.id} // project id as key prop
+         project={project} /> // prop to pass project data to Card component
       ))}
     </section>
   );
