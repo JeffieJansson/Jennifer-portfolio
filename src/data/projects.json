@@ -6,13 +6,12 @@
     "tags": [
       "HTML5",
       "CSS3",
-      "JavaScript",
-      "Spoonacular API"
+      "JavaScript"
     ],
     "live": "https://frontendproject2025.netlify.app/",
     "code": "https://github.com/JeffieJansson/frontend-project",
     "image": {
-      "src": "./business.jpg",
+      "src": "src/assets/business.jpg",
       "alt": "picture of record studio website"
     }
   },
@@ -29,7 +28,7 @@
     "live": "https://library-recipe.netlify.app/",
     "code": "https://github.com/JeffieJansson/recipe-library",
     "image": {
-      "src": "./recipe.jpg",
+      "src": "src/assets/recipe.jpg",
       "alt": "pictures of food recipes and filtering options"
     }
   },
@@ -46,7 +45,7 @@
     "live": "https://project-weather-app-b2.netlify.app/",
     "code": "https://github.com/marinalendt-png/js-project-weather-app",
     "image": {
-      "src": "./weather.jpg",
+      "src": "src/assets/weather.jpg",
       "alt": "picture of weather app"
     }
   },
@@ -61,7 +60,7 @@
     "live": "#",
     "code": "#",
     "image": {
-      "src": "./extra.jpg",
+      "src": "/extra.jpg",
       "alt": "Extra"
     }
   }
