@@ -11,7 +11,7 @@
     "live": "https://frontendproject2025.netlify.app/",
     "code": "https://github.com/JeffieJansson/frontend-project",
     "image": {
-      "src": "src/assets/business.jpg",
+      "src": "/business.jpg",
       "alt": "picture of record studio website"
     }
   },
