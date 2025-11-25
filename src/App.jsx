@@ -5,18 +5,22 @@ import { Skills } from "./sections/Skills.jsx";
 import { Projects } from "./sections/Projects.jsx";
 import { Journey } from "./sections/Journey.jsx";
 import { Contact } from "./sections/Contact.jsx";
+import { GlobalStyle } from "./components/GlobalStyles.jsx";
 
 export const App = () => {
   return (
-    <div className="app">
-      <Hero />
-      <main>
-        <Tech />
-        <Projects />
-        <Skills />
-        <Journey />
-        <Contact />
-      </main>
-    </div>
+    <>
+      <GlobalStyle />
+      <div className="app">
+        <Hero />
+        <main>
+          <Tech />
+          <Projects />
+          <Skills />
+          <Journey />
+          <Contact />
+        </main>
+      </div>
+    </>
   );
 };
