@@ -1,6 +1,8 @@
 // src/sections/Skills.jsx
 import styled from "styled-components";
 import skillsData from "../data/skills.json";
+import { media } from "../data/media.js";
+
 // main section for skills
 const SkillsSection = styled.section`
   background: #000;
@@ -10,6 +12,16 @@ const SkillsSection = styled.section`
   align-items: center;
   gap: 16px;
   align-self: stretch;
+  font-family: Poppins;
+
+   @media ${media.tablet} {
+    padding: 96px 16px;
+  }
+
+  @media ${media.mobile} {
+    padding: 64px 16px;
+  }
+
 `;
 
 // title skills
@@ -19,6 +31,14 @@ const SkillsTitle = styled.h2`
   font-size: 80px;
   font-weight: 700;
   line-height: normal;
+
+   @media ${media.tablet} {
+    font-size: 56px;
+  }
+
+  @media ${media.mobile} {
+    font-size: 40px;
+  }
 `;
 
 //container for all columns
@@ -28,16 +48,31 @@ const Columns = styled.div`
   justify-content: center;
   align-items: flex-start;
   gap: 24px;
+
+  @media ${media.tablet} {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media ${media.mobile} {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
 `;
 
 // each column
 const Column = styled.div`
   color: #FFF;
-  font-family: Poppins;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 32px; /* 177.778% */
+
+    @media ${media.mobile} {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 // 4) TAG –  "Code", "Toolbox", osv.
@@ -48,18 +83,25 @@ const Tag = styled.div`
   justify-content: center;
   align-items: flex-start;
   align-self: stretch;
+  width:177px;
 
   border-radius: 4px;
   border: 1px solid #FFF;
   background: #000;
+
+  @media ${media.mobile} {
+    width: 100%;
+    max-width: 220px;
+  }
 `;
 
 // text inside tag ("Code", "Toolbox", ...)
 const TagTitle = styled.span`
-  color: #fff;
-  font-size: 12px;
-  font-weight: 400;
- font-size: 16px;
+color: #FFF;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
  
 `;
 

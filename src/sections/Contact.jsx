@@ -1,5 +1,6 @@
 // src/sections/Contact.jsx
 import styled from "styled-components";
+import { media } from "../data/media.js";
 import {
   GitHubIcon,
   InstagramIcon,
@@ -17,17 +18,33 @@ const ContactSection = styled.section`
   align-items: center;
   gap: 16px;
   align-self: stretch;
+  font-family: Poppins;
+
+ @media ${media.tablet} {
+    padding: 96px 16px;
+  }
+
+  @media ${media.mobile} {
+    padding: 64px 16px;
+  }
 `;
 
 // Title
 const ContactTitle = styled.h2`
   color: #FFF;
   text-align: center;
-  font-family: Poppins;
   font-size: 80px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+
+    @media ${media.tablet} {
+    font-size: 56px;
+  }
+
+  @media ${media.mobile} {
+    font-size: 40px;
+  }
 `;
 
 // Footer avatar (picture)
@@ -36,6 +53,11 @@ const Avatar = styled.img`
   height: 164px;
   border-radius: 50%;
   object-fit: cover;
+
+   @media ${media.mobile} {
+    width: 128px;
+    height: 128px;
+  }
 `;
 
 // contact info
@@ -52,6 +74,18 @@ const Info = styled.div`
   a {
     text-decoration: none;
     color: #fff;
+  }
+
+   @media ${media.tablet} {
+    p {
+      font-size: 24px;
+    }
+  }
+
+  @media ${media.mobile} {
+    p {
+      font-size: 18px;
+    }
   }
 `;
 
@@ -71,6 +105,17 @@ const SocialRow = styled.div`
     width: 32px;
     height: 32px;
     fill: #ffffff;
+  }
+
+   @media ${media.mobile} {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
   }
 `;
 
