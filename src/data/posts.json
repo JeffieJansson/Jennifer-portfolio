@@ -4,7 +4,7 @@
     "title": "Pitch myself as a developer",
     "excerpt": "Thoughts on how to effectively present myself in the tech industry.",
     "link": "https://www.linkedin.com/posts/jennifer-jansson_i-veckan-har-det-handlat-om-n%C3%A5got-som-l%C3%A4tt-activity-7395085710417973248-1x9O?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB3H4eMBXAYupsRoNRJuXMD_IcGjMjaH20k",
-    "badge": "November 14th, 2025",
+    "badge": "November 14th",
     "image": {
       "src": "src/assets/pitch.png",
       "alt": "Pitch block graphic"
@@ -12,24 +12,24 @@
   },
   {
     "id": "post2",
-    "title": "API has opened my eyes",
+    "title": "Styled components",
     "excerpt": "APIs went from alien to practical — small wins that stuck.",
-    "link": "#",
-    "badge": "September 30th",
+    "link": "https://styled-components.com/docs/basics",
+    "badge": "November 24th",
     "image": {
-      "src": "src/assets/API.png",
-      "alt": "API graphic"
+      "src": "src/assets/post2.png",
+      "alt": "Picture of styled components code snippet but with a stylish twist of nails being painted"
     }
   },
   {
-    "id": "post3",
-    "title": "Working in Git as a team",
-    "excerpt": "Merging branches, resolving conflicts, collaborating effectively.",
-    "link": "#",
-    "badge": "October 16th",
+     "id": "post3",
+    "title": "React - getting comfortable",
+    "excerpt": "React went from a human word to a practical tool",
+    "link": "https://www.simplilearn.com/tutorials/reactjs-tutorial/what-is-reactjs",
+    "badge": "November 18th",
     "image": {
-      "src": "src/assets/git-merge.png",
-      "alt": "Git merge graphic"
+      "src": "src/assets/react-icon.png",
+      "alt": "Picture of the react icon"
     }
   },
   {
