@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PortraitImg from "../assets/portrait.png";
+import PortraitImg from "../portrait.png";
 import { media } from "../data/media.js";
 
 const IntroWrapper = styled.header`

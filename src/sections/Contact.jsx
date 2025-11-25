@@ -7,7 +7,7 @@ import {
   LinkedInIcon,
   StackOverflowIcon,
 } from "../components/Icons.jsx";
-import footerImage from "../assets/footer.png"; // 
+import footerImage from "../footer.png"; // 
 
 // Wrapper 
 const ContactSection = styled.section`

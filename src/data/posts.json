@@ -17,7 +17,7 @@
     "link": "https://styled-components.com/docs/basics",
     "badge": "November 24th",
     "image": {
-      "src": "src/assets/post2.png",
+      "src": "/post2.png",
       "alt": "Picture of styled components code snippet but with a stylish twist of nails being painted"
     }
   },
@@ -28,7 +28,7 @@
     "link": "https://www.simplilearn.com/tutorials/reactjs-tutorial/what-is-reactjs",
     "badge": "November 18th",
     "image": {
-      "src": "src/assets/react-icon.png",
+      "src": "/react-icon.png",
       "alt": "Picture of the react icon"
     }
   },
@@ -39,7 +39,7 @@
     "link": "#",
     "badge": "November 6th",
     "image": {
-      "src": "/src/assets/web-accessibility.png",
+      "src": "/web-accessibility.png",
       "alt": "web accessibility graphic"
     }
   }
