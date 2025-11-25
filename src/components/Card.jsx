@@ -10,8 +10,12 @@ export const TagsRow = styled.div`
 
 // single tag
 export const Tag = styled.span`
-  padding: 0.25rem 0.75rem;
+  display: flex;
+  width: 142px;
+  padding: 2px 6px;
+  justify-content: center;
+  align-items: flex-start;
   border-radius: 4px;
   border: 1px solid #000;
-  font-size: 0.75rem;
+  background: #FFF;
 `;
