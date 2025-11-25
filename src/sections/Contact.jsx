@@ -39,11 +39,11 @@ const ContactTitle = styled.h2`
   line-height: normal;
 
     @media ${media.tablet} {
-    font-size: 56px;
+    font-size: 88px;
   }
 
   @media ${media.mobile} {
-    font-size: 40px;
+    font-size: 48px;
   }
 `;
 
@@ -84,7 +84,7 @@ const Info = styled.div`
 
   @media ${media.mobile} {
     p {
-      font-size: 18px;
+      font-size: 20px;
     }
   }
 `;
@@ -112,10 +112,7 @@ const SocialRow = styled.div`
     flex-wrap: wrap;
     justify-content: center;
 
-    svg {
-      width: 28px;
-      height: 28px;
-    }
+
   }
 `;
 

@@ -3,13 +3,12 @@ import PortraitImg from "../assets/portrait.png";
 import { media } from "../data/media.js";
 
 const IntroWrapper = styled.header`
-  display: flex;
-  height: 1289px;
-  padding: 128px 0 64px 0;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  align-self: stretch;
+display: flex;
+padding: 64px 24px;
+flex-direction: column;
+align-items: center;
+gap: 16px;
+align-self: stretch;
   font-family: Poppins;
 
     /* Tablet & mobile: let the height grow with content and add side padding */
@@ -59,48 +58,49 @@ const IntroText = styled.section`
     /* Tablet adjustments */
   @media ${media.tablet} {
     h1 {
-      font-size: 72px;
+      font-size: 48px;
     }
 
     p {
       font-size: 16px;
-      line-height: 28px;
+      line-height: 32px;
     }
   }
 
   /* Mobile adjustments */
   @media ${media.mobile} {
     h3 {
-      font-size: 20px;
+      font-size: 24px;
     }
 
     h1 {
-      font-size: 42px;
+      font-size: 48px;
     }
 
     p {
-      font-size: 14px;
-      line-height: 24px;
+      font-size: 16px;
+      line-height: 32px;
     }
   }
 
 `;
 
 const PortraitImage = styled.img`
-width: 475px;
-height: 398px;
-flex-shrink: 0;
-aspect-ratio: 475/398;
+  width: 358px;
+  height: 382px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+  margin: 32px auto 16px;
 
   @media ${media.tablet} {
-    width: 360px;
-    height: auto;
+  width: 267px;
+  height: 277px;
   }
 
   @media ${media.mobile} {
-    width: 220px;
-    height: auto;
-    max-width: 80vw;
+  width: 144px;
+  height: 154px;
   }
 `;
 

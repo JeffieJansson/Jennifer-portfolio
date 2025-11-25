@@ -17,12 +17,12 @@ const JourneySection = styled.section`
   font-family: Poppins;
 
 @media ${media.tablet} {
-    padding: 96px 16px;
+    padding: 64px 24px;
     gap: 96px;
   }
 
   @media ${media.mobile} {
-    padding: 64px 16px;
+    padding: 64px 24px;
     gap: 64px;
   }
 `;
@@ -34,11 +34,11 @@ const JourneyTitle = styled.h2`
   text-align: center;
 
   @media ${media.tablet} {
-    font-size: 56px;
+    font-size: 48px;
   }
 
   @media ${media.mobile} {
-    font-size: 40px;
+    font-size: 48px;
   }
 `;
 
@@ -50,7 +50,7 @@ const PostsList = styled.div`
   gap: 64px;
 
   @media ${media.tablet} {
-    gap: 40px;
+    gap: 32px;
   }
 
   @media ${media.mobile} {
@@ -86,8 +86,13 @@ const Thumb = styled.img`
   object-fit: cover;
   
  @media ${media.tablet} {
-    width: 100%;
-    height: auto;
+    width: 200px;
+    height: 338px;
+  }
+
+  @media ${media.mobile} {
+    height: 200px;
+    align-self: stretch;
   }
 `;
 

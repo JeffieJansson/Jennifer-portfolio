@@ -24,14 +24,18 @@ const ProjectsSection = styled.section`
 
 // Inner container
 const ProjectsInner = styled.div`
-  width: 1184px;
-  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 128px;
 
-   @media ${media.mobile} {
+ @media ${media.tablet} {
+    max-width: 768px;     /* roughly tablet frame width in Figma */
+    gap: 96px;
+  }
+
+  @media ${media.mobile} {
+    max-width: 375px;     /* mobile frame width in Figma */
     gap: 80px;
   }
 `;
