@@ -6,7 +6,6 @@ import Button from "../components/Button";
 import { TagsRow, Tag } from "../components/Card";
 import { LiveIcon, CodeIcon } from "../components/Icons";
 
-// Outer section (full-width, white background)
 const ProjectsSection = styled.section`
   background: #ffffff;
   display: flex;
@@ -22,32 +21,22 @@ const ProjectsSection = styled.section`
   }
 `;
 
-// Inner container
 const ProjectsInner = styled.div`
+  width: 1184px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 128px;
-
- @media ${media.tablet} {
-    max-width: 768px;     /* roughly tablet frame width in Figma */
-    gap: 96px;
-  }
-
-  @media ${media.mobile} {
-    max-width: 375px;     /* mobile frame width in Figma */
-    gap: 80px;
-  }
 `;
 
-// Section title
 const ProjectsTitle = styled.h2`
   font-size: 80px;
   font-weight: 700;
   text-align: center;
   font-family: Poppins;
 
-   @media ${media.tablet} {
+  @media ${media.tablet} {
     font-size: 56px;
   }
 
@@ -56,14 +45,13 @@ const ProjectsTitle = styled.h2`
   }
 `;
 
-// Wrapper for all project rows
 const ProjectsList = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 125px;
 
- @media ${media.tablet} {
+  @media ${media.tablet} {
     gap: 80px;
   }
 
@@ -72,16 +60,13 @@ const ProjectsList = styled.div`
   }
 `;
 
-// Single project row, with optional reversed layout
 const ProjectRow = styled.article`
   display: flex;
   align-items: center;
   gap: 64px;
   align-self: stretch;
-  /*Desktop left/right */
   flex-direction: ${({ $reverse }) => ($reverse ? "row-reverse" : "row")};
 
-  /* Tablet & mobile: stack image and content */
   @media ${media.tablet} {
     flex-direction: column;
     align-items: flex-start;
@@ -91,41 +76,38 @@ const ProjectRow = styled.article`
   @media ${media.mobile} {
     align-items: center;
   }
-  `;
+`;
 
-// Project thumbnail
 const ProjectThumb = styled.img`
   width: 479px;
-height: 479px;
+  height: 479px;
   max-width: 100%;
   border-radius: 12px;
   object-fit: cover;
 
- @media ${media.tablet} {
+  @media ${media.tablet} {
     width: 100%;
     height: auto;
   }
 `;
 
-// Content column
 const ProjectContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
   max-width: 560px;
 
-    @media ${media.tablet} {
+  @media ${media.tablet} {
     max-width: 100%;
   }
 `;
 
-// Title, summary
 const ProjectTitle = styled.h3`
   font-size: 30px;
   font-weight: 600;
   font-family: Poppins;
 
-    @media ${media.mobile} {
+  @media ${media.mobile} {
     font-size: 24px;
   }
 `;
@@ -135,13 +117,12 @@ const ProjectSummary = styled.p`
   line-height: 1.6;
   font-family: Poppins;
 
-    @media ${media.mobile} {
+  @media ${media.mobile} {
     font-size: 16px;
     line-height: 1.5;
   }
 `;
 
-// Buttons row
 const ButtonsRow = styled.div`
   display: flex;
   flex-direction: column;
@@ -150,19 +131,12 @@ const ButtonsRow = styled.div`
   align-self: stretch;
   font-family: Poppins;
 
- 
   @media ${media.mobile} {
     align-items: stretch;
-
-    a {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
   }
 `;
 
-export const Projects = () => { 
+export const Projects = () => {
   return (
     <ProjectsSection id="projects">
       <ProjectsInner>
@@ -170,10 +144,7 @@ export const Projects = () => {
 
         <ProjectsList>
           {projects.map((project, index) => (
-            <ProjectRow
-              key={project.id}
-              $reverse={index % 2 === 1} // every second project reversed
-            >
+            <ProjectRow key={project.id} $reverse={index % 2 === 1}>
               {project.image && (
                 <ProjectThumb
                   src={project.image.src}
@@ -228,4 +199,4 @@ export const Projects = () => {
       </ProjectsInner>
     </ProjectsSection>
   );
-}
+};

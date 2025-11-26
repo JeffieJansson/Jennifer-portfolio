@@ -7,9 +7,8 @@ import {
   LinkedInIcon,
   StackOverflowIcon,
 } from "../components/Icons.jsx";
-import footerImage from "/footer.png"; 
+import footerImage from "/footer.png";
 
-// Wrapper 
 const ContactSection = styled.section`
   background: #000;
   display: flex;
@@ -20,7 +19,7 @@ const ContactSection = styled.section`
   align-self: stretch;
   font-family: Poppins;
 
- @media ${media.tablet} {
+  @media ${media.tablet} {
     padding: 96px 16px;
   }
 
@@ -29,38 +28,34 @@ const ContactSection = styled.section`
   }
 `;
 
-// Title
 const ContactTitle = styled.h2`
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-size: 80px;
-  font-style: normal;
   font-weight: 700;
   line-height: normal;
 
-    @media ${media.tablet} {
-    font-size: 88px;
+  @media ${media.tablet} {
+    font-size: 56px;
   }
 
   @media ${media.mobile} {
-    font-size: 48px;
+    font-size: 40px;
   }
 `;
 
-// Footer avatar (picture)
 const Avatar = styled.img`
   width: 164px;
   height: 164px;
   border-radius: 50%;
   object-fit: cover;
 
-   @media ${media.mobile} {
+  @media ${media.mobile} {
     width: 128px;
     height: 128px;
   }
 `;
 
-// contact info
 const Info = styled.div`
   text-align: center;
   margin-top: 16px;
@@ -76,7 +71,7 @@ const Info = styled.div`
     color: #fff;
   }
 
-   @media ${media.tablet} {
+  @media ${media.tablet} {
     p {
       font-size: 24px;
     }
@@ -89,7 +84,6 @@ const Info = styled.div`
   }
 `;
 
-//  Social icons row
 const SocialRow = styled.div`
   display: flex;
   align-items: flex-end;
@@ -107,74 +101,67 @@ const SocialRow = styled.div`
     fill: #ffffff;
   }
 
-   @media ${media.mobile} {
+  @media ${media.mobile} {
     gap: 16px;
     flex-wrap: wrap;
     justify-content: center;
-
-
   }
 `;
 
-export const Contact = () => {
-  return (
-    <ContactSection id="contact" aria-labelledby="contact-heading">
-      <ContactTitle id="contact-heading">Let’s Talk</ContactTitle>
+export const Contact = () => (
+  <ContactSection id="contact" aria-labelledby="contact-heading">
+    <ContactTitle id="contact-heading">Let’s Talk</ContactTitle>
 
-      <Avatar
-        src={footerImage}
-        alt="Portrait of Jennifer Jansson"
-      />
+    <Avatar src={footerImage} alt="Portrait of Jennifer Jansson" />
 
-      <Info>
-        <p>Jennifer Jansson</p>
-        <p>
-          <a href="tel:+46763141262">+46 76 314 12 62</a>
-        </p>
-        <p>
-          <a href="mailto:jenniferjansson92@gmail.com">
-            jenniferjansson92@gmail.com
-          </a>
-        </p>
-      </Info>
-
-      <SocialRow aria-label="Social media links">
-        <a
-          href="https://www.linkedin.com/in/jennifer-jansson"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="LinkedIn"
-        >
-          <LinkedInIcon />
+    <Info>
+      <p>Jennifer Jansson</p>
+      <p>
+        <a href="tel:+46763141262">+46 76 314 12 62</a>
+      </p>
+      <p>
+        <a href="mailto:jenniferjansson92@gmail.com">
+          jenniferjansson92@gmail.com
         </a>
+      </p>
+    </Info>
 
-        <a
-          href="https://github.com/jeffiejansson"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="GitHub"
-        >
-          <GitHubIcon />
-        </a>
+    <SocialRow aria-label="Social media links">
+      <a
+        href="https://www.linkedin.com/in/jennifer-jansson"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="LinkedIn"
+      >
+        <LinkedInIcon />
+      </a>
 
-        <a
-          href="https://stackoverflow.com/jenniferjansson"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Stack Overflow"
-        >
-          <StackOverflowIcon />
-        </a>
+      <a
+        href="https://github.com/jeffiejansson"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="GitHub"
+      >
+        <GitHubIcon />
+      </a>
 
-        <a
-          href="https://www.instagram.com/_jenniferjansson_/"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Instagram"
-        >
-          <InstagramIcon />
-        </a>
-      </SocialRow>
-    </ContactSection>
-  );
-}
+      <a
+        href="https://stackoverflow.com/jenniferjansson"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Stack Overflow"
+      >
+        <StackOverflowIcon />
+      </a>
+
+      <a
+        href="https://www.instagram.com/_jenniferjansson_/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Instagram"
+      >
+        <InstagramIcon />
+      </a>
+    </SocialRow>
+  </ContactSection>
+);

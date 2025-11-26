@@ -3,28 +3,25 @@ import styled from "styled-components";
 import skillsData from "../data/skills.json";
 import { media } from "../data/media.js";
 
-// main section for skills
 const SkillsSection = styled.section`
   background: #000;
   display: flex;
   padding: 128px 0;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 32px;
   align-self: stretch;
   font-family: Poppins;
 
-   @media ${media.tablet} {
+  @media ${media.tablet} {
     padding: 96px 16px;
   }
 
   @media ${media.mobile} {
     padding: 64px 16px;
   }
-
 `;
 
-// title skills
 const SkillsTitle = styled.h2`
   color: #fff;
   text-align: center;
@@ -32,7 +29,7 @@ const SkillsTitle = styled.h2`
   font-weight: 700;
   line-height: normal;
 
-   @media ${media.tablet} {
+  @media ${media.tablet} {
     font-size: 56px;
   }
 
@@ -41,52 +38,47 @@ const SkillsTitle = styled.h2`
   }
 `;
 
-//container for all columns
 const Columns = styled.div`
   display: flex;
-  width: 982px;
   justify-content: center;
   align-items: flex-start;
   gap: 24px;
+  width: 100%;
+  max-width: 982px;
 
+  /* Tablet & mobile: EN kolumn, centrerad */
   @media ${media.tablet} {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  @media ${media.mobile} {
     flex-direction: column;
     align-items: center;
     gap: 32px;
   }
 `;
 
-// each column
 const Column = styled.div`
-  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
   font-size: 18px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 32px; /* 177.778% */
+  line-height: 32px;
 
-    @media ${media.mobile} {
+  @media ${media.mobile} {
     align-items: center;
     text-align: center;
   }
 `;
 
-// 4) TAG –  "Code", "Toolbox", osv.
 const Tag = styled.div`
   display: flex;
   height: 28px;
   padding: 2px 6px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   align-self: stretch;
-  width:177px;
+  width: 177px;
 
   border-radius: 4px;
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
   background: #000;
 
   @media ${media.mobile} {
@@ -95,24 +87,21 @@ const Tag = styled.div`
   }
 `;
 
-// text inside tag ("Code", "Toolbox", ...)
 const TagTitle = styled.span`
-color: #FFF;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
- 
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
 `;
 
-// all list under each tag
 const List = styled.ul`
   display: flex;
   flex-direction: column;
   list-style: none;
   padding: 0;
+  margin: 16px 0 0;
 `;
-// separate list for each tag
+
 const Item = styled.li`
   color: #fff;
   font-size: 18px;
@@ -174,6 +163,4 @@ export const Skills = () => {
       </Columns>
     </SkillsSection>
   );
-}
-
-
+};

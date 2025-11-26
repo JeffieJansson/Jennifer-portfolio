@@ -6,7 +6,6 @@ import Button from "../components/Button";
 import { Tag } from "../components/Card";
 import { LiveIcon } from "../components/Icons";
 
-// Section wrapper (white background, big vertical padding)
 const JourneySection = styled.section`
   background: #ffffff;
   display: flex;
@@ -16,56 +15,53 @@ const JourneySection = styled.section`
   gap: 128px;
   font-family: Poppins;
 
-@media ${media.tablet} {
-    padding: 64px 24px;
+  @media ${media.tablet} {
+    padding: 96px 16px;
     gap: 96px;
   }
 
   @media ${media.mobile} {
-    padding: 64px 24px;
-    gap: 64px;
+    padding: 64px 16px;
+    gap: 80px;
   }
 `;
 
-// Section title
 const JourneyTitle = styled.h2`
   font-size: 80px;
   font-weight: 500;
   text-align: center;
 
   @media ${media.tablet} {
-    font-size: 48px;
+    font-size: 56px;
   }
 
   @media ${media.mobile} {
-    font-size: 48px;
+    font-size: 40px;
   }
 `;
 
-// Container for all posts
 const PostsList = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
   gap: 64px;
+  width: 100%;
+  max-width: 1184px;
 
   @media ${media.tablet} {
-    gap: 32px;
+    gap: 48px;
   }
 
   @media ${media.mobile} {
-    gap: 32px;
+    gap: 40px;
   }
 `;
 
-// Single post row
 const PostRow = styled.article`
   display: flex;
   align-items: center;
   gap: 125px;
   align-self: stretch;
 
-  
   @media ${media.tablet} {
     flex-direction: column;
     align-items: flex-start;
@@ -77,52 +73,44 @@ const PostRow = styled.article`
   }
 `;
 
-// Thumbnail image
 const Thumb = styled.img`
   width: 479px;
   height: 300px;
   max-width: 100%;
   border-radius: 8px;
   object-fit: cover;
-  
- @media ${media.tablet} {
-    width: 200px;
-    height: 338px;
-  }
 
-  @media ${media.mobile} {
-    height: 200px;
-    align-self: stretch;
+  @media ${media.tablet} {
+    width: 100%;
+    height: auto;
   }
 `;
 
-// Content (right side)
 const PostContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: 560px;
 
-    @media ${media.tablet} {
+  @media ${media.tablet} {
     max-width: 100%;
   }
 `;
 
-// Title + excerpt
 const PostTitle = styled.h3`
   font-size: 30px;
   font-weight: 500;
-  
+
   @media ${media.mobile} {
     font-size: 24px;
   }
 `;
 
 const PostExcerpt = styled.p`
- color: #202020;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 32px; /* 177.778% */
+  color: #202020;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
 
   @media ${media.mobile} {
     font-size: 16px;
@@ -130,50 +118,41 @@ line-height: 32px; /* 177.778% */
   }
 `;
 
-// Button row
 const ButtonRow = styled.div`
   margin-top: 8px;
 `;
 
-export const Journey = () => {
-  return (
-    <JourneySection id="my-words">
-      <JourneyTitle>My Words</JourneyTitle>
+export const Journey = () => (
+  <JourneySection id="my-words">
+    <JourneyTitle>My Words</JourneyTitle>
 
-      <PostsList>
-        {posts.map((post) => (
-          <PostRow key={post.id}>
-            {post.image && (
-              <Thumb src={post.image.src} alt={post.image.alt} />
+    <PostsList>
+      {posts.map((post) => (
+        <PostRow key={post.id}>
+          {post.image && <Thumb src={post.image.src} alt={post.image.alt} />}
+
+          <PostContent>
+            {post.badge && <Tag>{post.badge}</Tag>}
+
+            <PostTitle>{post.title}</PostTitle>
+            <PostExcerpt>{post.excerpt}</PostExcerpt>
+
+            {post.link && (
+              <ButtonRow>
+                <Button
+                  as="a"
+                  href={post.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LiveIcon aria-hidden="true" />
+                  <span>Read article</span>
+                </Button>
+              </ButtonRow>
             )}
-
-            <PostContent>
-              {post.badge && <Tag>{post.badge}</Tag>}
-
-              <PostTitle>{post.title}</PostTitle>
-              <PostExcerpt>{post.excerpt}</PostExcerpt>
-
-              {post.link && (
-                <ButtonRow>
-                  <Button
-                    as="a"
-                    href={post.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <LiveIcon aria-hidden="true" />
-                    <span>Read article</span>
-                  </Button>
-                </ButtonRow>
-              )}
-            </PostContent>
-          </PostRow>
-        ))}
-      </PostsList>
-
-      
-    </JourneySection>
-  );
-}
-
-
+          </PostContent>
+        </PostRow>
+      ))}
+    </PostsList>
+  </JourneySection>
+);
