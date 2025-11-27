@@ -14,6 +14,7 @@ const Button = styled.a`
   font-weight: 500;
   color: #fff;
   background: #000;
+  font-size: 18px;
   cursor: pointer;            
   transition: background 0.2s, transform 0.1s;
 
@@ -23,10 +24,6 @@ const Button = styled.a`
     outline: 2px solid #000;       
   }
 
-  &:focus-visible {
-    outline: 2px solid #fff; 
-    outline-offset: 2px;
-  }
 `;
 
 export default Button;
