@@ -58,6 +58,10 @@ const IntroText = styled.section`
     h1 {
       font-size: 56px;
     }
+    
+  h1 br {
+      display: none;
+    }
 
     p {
       font-size: 16px;
