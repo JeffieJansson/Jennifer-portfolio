@@ -4,8 +4,8 @@
     "title": "Business site",
     "summary": "A fictional responsive website built with HTML, CSS & JavaScript. Includes hero video, card-based layout, signup form, and interactive hamburger menu. No backend connection — focus on responsive UI and clean code.",
     "tags": [
-      "HTML5",
-      "CSS3",
+      "HTML",
+      "CSS",
       "JavaScript"
     ],
     "live": "https://frontendproject2025.netlify.app/",
@@ -20,8 +20,8 @@
     "title": "Recipe library",
     "summary": "An interactive recipe web app with possibility to search, filter and sort recipes by cuisine, diet, time and popularity using Spoonacular API. Data normalized and cached in localStorage for better performance and offline access",
     "tags": [
-      "HTML5",
-      "CSS3",
+      "HTML",
+      "CSS",
       "JavaScript",
       "Spoonacular API"
     ],
@@ -37,31 +37,32 @@
     "title": "Weather app – SMHI API",
     "summary": "A responsive weather app displaying current weather conditions and 5-day forecasts for multiple Swedish cities using the SMHI API. Built collaboratively using Git and TypeScript for safer data handling and cleaner code.",
     "tags": [
-      "HTML5",
-      "CSS3",
+      "HTML",
+      "CSS",
       "TypeScript",
       "SMHI API"
     ],
     "live": "https://project-weather-app-b2.netlify.app/",
     "code": "https://github.com/marinalendt-png/js-project-weather-app",
     "image": {
-      "src": "/weather.jpg",
+      "src": "/weather.png",
       "alt": "picture of weather app"
     }
   },
   {
-    "id": "extra-1",
-    "title": "Extra project placeholder",
-    "summary": "Hidden until 'See more projects' is clicked.",
+    "id": "accessibility",
+    "title": "Web Accessibility Quiz",
+    "summary": "A responsive Quiz build with web accessibility in mind. The quiz tests users' knowledge of the team that built the website through multiple-choice questions. It provides instant feedback on answers and a final score at the end. As a second page reveals information about the team and answers to the quiz questions.",
     "tags": [
-      "JS",
-      "HTML"
+      "HTML",
+      "CSS",
+      "JavaScript"
     ],
-    "live": "#",
-    "code": "#",
+    "live": "https://accessibilitymixedgroup.netlify.app/",
+    "code": "https://github.com/irisdgz/js-project-accessibility",
     "image": {
-      "src": "",
-      "alt": "Extra"
+      "src": "/accessibility.png",
+      "alt": "Picture of web accessibility quiz results"
     }
   }
 ]
