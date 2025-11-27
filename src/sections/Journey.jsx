@@ -1,10 +1,12 @@
 // src/sections/Journey.jsx
+import { useState } from "react"; 
 import styled from "styled-components";
 import posts from "../data/posts.json";
 import { media } from "../data/media.js";
 import Button from "../components/Button";
 import { Tag } from "../components/Card";
 import { LiveIcon } from "../components/Icons";
+import { SeeMoreButton } from "../components/SeeMoreButton";
 
 const JourneySection = styled.section`
   background: #ffffff;
@@ -122,37 +124,52 @@ const ButtonRow = styled.div`
   margin-top: 8px;
 `;
 
-export const Journey = () => (
-  <JourneySection id="my-words">
-    <JourneyTitle>My Words</JourneyTitle>
+  export const Journey = () => {
+  // visa bara 3 artiklar först
+  const [showAll, setShowAll] = useState(false);
 
-    <PostsList>
-      {posts.map((post) => (
-        <PostRow key={post.id}>
-          {post.image && <Thumb src={post.image.src} alt={post.image.alt} />}
+  const visiblePosts = showAll ? posts : posts.slice(0, 3);
+  const hasMorePosts = posts.length > 3;
 
-          <PostContent>
-            {post.badge && <Tag>{post.badge}</Tag>}
+  return (
+    <JourneySection id="my-words">
+      <JourneyTitle>My Words</JourneyTitle>
 
-            <PostTitle>{post.title}</PostTitle>
-            <PostExcerpt>{post.excerpt}</PostExcerpt>
+      <PostsList>
+        {visiblePosts.map((post) => (
+          <PostRow key={post.id}>
+            {post.image && <Thumb src={post.image.src} alt={post.image.alt} />}
 
-            {post.link && (
-              <ButtonRow>
-                <Button
-                  as="a"
-                  href={post.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LiveIcon aria-hidden="true" />
-                  <span>Read article</span>
-                </Button>
-              </ButtonRow>
-            )}
-          </PostContent>
-        </PostRow>
-      ))}
-    </PostsList>
-  </JourneySection>
-);
+            <PostContent>
+              {post.badge && <Tag>{post.badge}</Tag>}
+
+              <PostTitle>{post.title}</PostTitle>
+              <PostExcerpt>{post.excerpt}</PostExcerpt>
+
+              {post.link && (
+                <ButtonRow>
+                  <Button
+                    as="a"
+                    href={post.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <LiveIcon aria-hidden="true" />
+                    <span>Read article</span>
+                  </Button>
+                </ButtonRow>
+              )}
+            </PostContent>
+          </PostRow>
+        ))}
+      </PostsList>
+
+      {hasMorePosts && (
+        <SeeMoreButton
+          onClick={() => setShowAll((prev) => !prev)}
+          label={showAll ? "Show fewer articles" : "See more articles"}
+        />
+      )}
+    </JourneySection>
+  );
+};

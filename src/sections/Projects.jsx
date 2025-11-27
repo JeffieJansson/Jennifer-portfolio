@@ -1,10 +1,14 @@
 // src/sections/Projects.jsx
+import { useState } from "react";
 import styled from "styled-components";
 import { media } from "../data/media.js";
 import projects from "../data/projects.json";
 import Button from "../components/Button";
 import { TagsRow, Tag } from "../components/Card";
 import { LiveIcon, CodeIcon } from "../components/Icons";
+import { SeeMoreButton } from "../components/SeeMoreButton";
+
+// ---- STYLES ----
 
 const ProjectsSection = styled.section`
   background: #ffffff;
@@ -133,18 +137,34 @@ const ButtonsRow = styled.div`
 
   @media ${media.mobile} {
     align-items: stretch;
+
+    a {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
   }
 `;
 
+// ---- COMPONENT ----
+
 export const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleProjects = showAll ? projects : projects.slice(0, 3);
+  const hasMoreProjects = projects.length > 3;
+
   return (
     <ProjectsSection id="projects">
       <ProjectsInner>
         <ProjectsTitle>Featured Projects</ProjectsTitle>
 
         <ProjectsList>
-          {projects.map((project, index) => (
-            <ProjectRow key={project.id} $reverse={index % 2 === 1}>
+          {visibleProjects.map((project, index) => (
+            <ProjectRow
+              key={project.id}
+              $reverse={index % 2 === 1} // desktop: every second project is reversed
+            >
               {project.image && (
                 <ProjectThumb
                   src={project.image.src}
@@ -196,6 +216,13 @@ export const Projects = () => {
             </ProjectRow>
           ))}
         </ProjectsList>
+
+        {hasMoreProjects && (
+          <SeeMoreButton
+            onClick={() => setShowAll((prev) => !prev)}
+            label={showAll ? "Show fewer projects" : "See more projects"}
+          />
+        )}
       </ProjectsInner>
     </ProjectsSection>
   );
