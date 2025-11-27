@@ -7,7 +7,6 @@ const Wrap = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
   font-family: Poppins;
   padding: 128px 0;
   gap: 16px;
@@ -36,20 +35,23 @@ const Inner = styled.div`
 
   p {
     margin: 0;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 30px;
+    line-height: normal;
+    font-weight: 500;
   }
 
   @media ${media.tablet} {
     padding: 0 16px;
 
     h2 {
-      font-size: 56px;
+      font-size: 60px;
     }
 
     p {
-      font-size: 15px;
-    }
+      font-size: 16px;
+      font-weight: 500;
+      line-height: normal;
+      }
   }
 
   @media ${media.mobile} {
@@ -58,8 +60,9 @@ const Inner = styled.div`
     }
 
     p {
-      font-size: 14px;
-      line-height: 1.5;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: normal;
     }
   }
 `;
