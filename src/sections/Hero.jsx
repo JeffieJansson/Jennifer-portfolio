@@ -1,6 +1,8 @@
 // src/sections/Hero.jsx
 import styled from "styled-components";
 import PortraitImg from "/portrait.png";
+import Img2 from "/mic.png";
+import Img3 from "/arts.png";
 import { media } from "../data/media.js";
 
 const IntroWrapper = styled.header`
@@ -79,22 +81,76 @@ const IntroText = styled.section`
   }
 `;
 
-const PortraitImage = styled.img`
-  width: 358px;
-  height: 382px;
-  border-radius: 8px;
-  object-fit: cover;
+const ImageBox = styled.div`
+  position: relative;
+  margin: 32px auto 24px;
+  width: 520px;
+  height: 450px;
   display: block;
-  margin: 32px auto 16px;
 
   @media ${media.tablet} {
-    width: 267px;
-    height: 277px;
+    width: 420px;
+    height: 230px;
   }
 
   @media ${media.mobile} {
-    width: 144px;
-    height: 154px;
+    width: 280px;
+    height: 200px;
+  }
+    
+  img {
+    position: absolute;
+    top: 0;
+    width: 358px;
+    height: 382px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+    
+
+    @media ${media.tablet} {
+      width: 260px;
+      height: 277px;
+    }
+
+    @media ${media.mobile} {
+      width: 144px;
+      height: 154px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  /* Left img */
+  img:nth-child(1) {
+    left: 0;
+    transform: translateY(20px) rotate(-8deg);
+    z-index: 1;
+
+    @media ${media.mobile} {
+      transform: translate(-20px) rotate(-8deg);
+    }
+  }
+
+  /* middle img */
+   img:nth-child(2) {
+    left: 50%;
+    transform: translate(-50%, -16px);
+    z-index: 3;
+
+    @media ${media.mobile} {
+      transform: translate(-50%, -16px);
+    }
+  }
+
+  /* right img */
+  img:nth-child(3) {
+    right: 0;
+    transform: translateY(20px) rotate(8deg);
+    z-index: 1;
+
+    @media ${media.mobile} {
+      transform: translate(30px) rotate(8deg);
+    }
   }
 `;
 
@@ -106,7 +162,11 @@ export const Hero = () => {
         <h1>
           Jennifer <br /> Jansson
         </h1>
-        <PortraitImage src={PortraitImg} alt="Portrait of Jennifer" />
+        <ImageBox>
+        <img src={Img3} alt="Picture of woman doing martial arts" />
+        <img src={PortraitImg} alt="Portrait of Jennifer" />
+        <img src={Img2} alt="Picture of microphone" />
+        </ImageBox>
         <h3>Frontend Developer & Digital Analytics Specialst</h3>
         <p>
           I love bridging the gap between design, data, and technology. I have
