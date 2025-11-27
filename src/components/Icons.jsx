@@ -38,6 +38,33 @@ export const CodeIcon = (props) => (
   </svg>
 );
 
+export const SeeMoreIcon = (props) => (
+<svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    {...props}
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="10"
+      stroke="currentColor"
+      strokeWidth="2"
+      fill="none"
+    />
+    <path
+      d="M12 8v8M8.5 12.5L12 16l3.5-3.5"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+
+);
 // Icons for Social Media
 export const InstagramIcon = (props) => (
   <svg 
