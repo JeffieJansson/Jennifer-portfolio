@@ -41,6 +41,12 @@ export const GlobalStyle = createGlobalStyle`
   a:hover {
     text-decoration: underline;
   }
+  
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid #e6229bff; 
+    outline-offset: 4px;
+  }
 
   ul, ol {
     margin: 0;
