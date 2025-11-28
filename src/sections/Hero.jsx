@@ -87,75 +87,43 @@ const IntroText = styled.section`
 
 const ImageBox = styled.div`
   position: relative;
-  margin: 32px auto 24px;
-  width: 520px;
-  height: 450px;
-  display: block;
+  margin: 24px auto 32px;
+  width: 280px;   
+  height: 230px;    
 
-  @media ${media.tablet} {
-    width: 420px;
-    height: 230px;
-  }
-
-  @media ${media.mobile} {
-    width: 280px;
-    height: 200px;
-  }
-    
   img {
     position: absolute;
-    top: 0;
-    width: 358px;
-    height: 382px;
+    width: 170px;  
+    height: 190px;
     border-radius: 16px;
     object-fit: cover;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
-    
-
-    @media ${media.tablet} {
-      width: 260px;
-      height: 277px;
-    }
-
-    @media ${media.mobile} {
-      width: 144px;
-      height: 154px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-    }
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
   }
 
-  /* Left img */
+  /* left img*/
   img:nth-child(1) {
-    left: 0;
-    transform: translateY(20px) rotate(-8deg);
+    left: -30px;
+    top: 26px;
+    transform: rotate(-9deg);
     z-index: 1;
-
-    @media ${media.mobile} {
-      transform: translate(-20px) rotate(-8deg);
-    }
   }
 
   /* middle img */
-   img:nth-child(2) {
+  img:nth-child(2) {
     left: 50%;
-    transform: translate(-50%, -16px);
+    top: 10px;
+    transform: translateX(-50%);
     z-index: 3;
-
-    @media ${media.mobile} {
-      transform: translate(-50%, -16px);
-    }
   }
 
-  /* right img */
+  /*right img*/
   img:nth-child(3) {
-    right: 0;
-    transform: translateY(20px) rotate(8deg);
-    z-index: 1;
-
-    @media ${media.mobile} {
-      transform: translate(30px) rotate(8deg);
-    }
+    right: -30px;
+    top: 26px;
+    transform: rotate(9deg);
+    z-index: 2;
   }
+
 `;
 
 export const Hero = () => {
