@@ -64,29 +64,27 @@ const PostRow = styled.article`
   gap: 125px;
   align-self: stretch;
 
-  @media ${media.tablet} {
+  
+  @media ${media.mobile} {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 24px;
   }
-
-  @media ${media.mobile} {
-    align-items: center;
-  }
 `;
+
 
 const Thumb = styled.img`
-  width: 479px;
-  height: 300px;
-  max-width: 100%;
+  width: 100%;              
+  max-width: 479px;         
+  aspect-ratio: 16 / 10;    
   border-radius: 8px;
-  object-fit: cover;
+  object-fit: cover;        
 
-  @media ${media.tablet} {
-    width: 100%;
-    height: auto;
+  @media ${media.mobile} {
+    max-width: 100%;        
   }
 `;
+
 
 const PostContent = styled.div`
   display: flex;
@@ -94,7 +92,8 @@ const PostContent = styled.div`
   gap: 16px;
   max-width: 560px;
 
-  @media ${media.tablet} {
+  /* ingen tablet-override här heller */
+  @media ${media.mobile} {
     max-width: 100%;
   }
 `;
@@ -124,7 +123,7 @@ const ButtonRow = styled.div`
   margin-top: 8px;
 `;
 
-  export const Journey = () => {
+export const Journey = () => {
   // visa bara 3 artiklar först
   const [showAll, setShowAll] = useState(false);
 
