@@ -28,12 +28,13 @@ const SeeMoreButtonBase = styled.button`
 
 `;
 
+
 export const SeeMoreButton = ({ label, ...props }) => {
-  return (
+  return ( 
     <SeeMoreButtonBase type="button" {...props}>
-      {/* SVG contains whole button, so label only needing for screen readers*/}
       <SeeMoreIcon />
-      <span className="sr-only">{label}</span>
+      <span className="sr-only">{label}</span>  {/* Screen reader only text */}
     </SeeMoreButtonBase>
   );
+
 };

@@ -95,11 +95,6 @@ const SocialRow = styled.div`
     text-decoration: none;
   }
 
-  svg {
-    width: 32px;
-    height: 32px;
-    fill: #ffffff;
-  }
 
   @media ${media.mobile} {
     gap: 16px;
@@ -146,7 +141,7 @@ export const Contact = () => (
       </a>
 
       <a
-        href="https://stackoverflow.com/jenniferjansson"
+        href="https://stackoverflow.com/users/31403265/jennifer-jansson"
         target="_blank"
         rel="noreferrer"
         aria-label="Stack Overflow"

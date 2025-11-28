@@ -13,7 +13,7 @@
   {
     "id": "post2",
     "title": "Styled components",
-    "excerpt": "APIs went from alien to practical — small wins that stuck.",
+    "excerpt": "Learning a new way of styling when coding that feels more intuitive.",
     "link": "https://styled-components.com/docs/basics",
     "badge": "November 24th",
     "image": {
@@ -24,7 +24,7 @@
   {
      "id": "post3",
     "title": "React - getting comfortable",
-    "excerpt": "React went from a human word to a practical tool",
+    "excerpt": "React went from a human response to a practical tool",
     "link": "https://www.simplilearn.com/tutorials/reactjs-tutorial/what-is-reactjs",
     "badge": "November 18th",
     "image": {
@@ -34,9 +34,9 @@
   },
   {
     "id": "post4",
-    "title": "Accessibility check",
-    "excerpt": "Implemented ARIA roles in a short group project and learned how small changes can make a big impact for users.",
-    "link": "#",
+    "title": "Accessibility Guidelines",
+    "excerpt": "Implemented ARIA roles and learned how small changes can make a big impact for users.",
+    "link": "https://www.w3.org/WAI/standards-guidelines/wcag/",
     "badge": "November 6th",
     "image": {
       "src": "/web-accessibility.png",
