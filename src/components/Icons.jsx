@@ -86,7 +86,7 @@ export const StackOverflowIcon = (props) => (
       width="32" 
       height="32" 
       viewBox="0 0 32 32" 
-      fill="currentColor" 
+      fill="white" 
       aria-hidden="true" 
       focusable="false" 
   {...props}>
@@ -100,7 +100,7 @@ export const LinkedInIcon = (props) => (
       width="32" 
       height="32" 
       viewBox="0 0 32 32" 
-      fill="currentColor" 
+      fill="white" 
       aria-hidden="true" 
       focusable="false" 
   {...props}>
