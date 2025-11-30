@@ -9,6 +9,7 @@ import {
 } from "../components/Icons.jsx";
 import footerImage from "/footer.png";
 
+// ---- STYLES ----
 const ContactSection = styled.section`
   background: #000;
   display: flex;
@@ -17,7 +18,6 @@ const ContactSection = styled.section`
   align-items: center;
   gap: 16px;
   align-self: stretch;
-  font-family: Poppins;
   width: 100%;
 
   @media ${media.tablet} {
@@ -106,12 +106,12 @@ const SocialRow = styled.div`
   }
 `;
 
+// ---- COMPONENT ----
 export const Contact = () => (
   <ContactSection id="contact" aria-labelledby="contact-heading">
     <ContactTitle id="contact-heading">Let’s Talk</ContactTitle>
 
     <Avatar src={footerImage} alt="Portrait of Jennifer Jansson" />
-
     <Info>
       <p>Jennifer Jansson</p>
       <p>

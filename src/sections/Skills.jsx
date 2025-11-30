@@ -3,6 +3,7 @@ import styled from "styled-components";
 import skillsData from "../data/skills.json";
 import { media } from "../data/media.js";
 
+// ---- STYLES ----
 const SkillsSection = styled.section`
   background: #000;
   display: flex;
@@ -11,7 +12,6 @@ const SkillsSection = styled.section`
   align-items: center;
   gap: 32px;
   align-self: stretch;
-  font-family: Poppins;
 
   @media ${media.tablet} {
     padding: 96px 16px;
@@ -45,7 +45,6 @@ const Columns = styled.div`
   gap: 24px;
   width: 100%;
   max-width: 982px;
-
 
   @media ${media.tablet} {
     flex-direction: column;
@@ -120,9 +119,9 @@ const Item = styled.li`
   }
 `;
 
+// ---- COMPONENT ----
 export const Skills = () => {
   const { code, toolbox, upcoming, more } = skillsData;
-
   return (
     <SkillsSection id="skills">
       <SkillsTitle>Skills</SkillsTitle>

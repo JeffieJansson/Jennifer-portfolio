@@ -9,8 +9,7 @@ import { Tag } from "../components/Card";
 import { LiveIcon } from "../components/Icons";
 import { SeeMoreButton } from "../components/SeeMoreButton";
 
-
-
+// ---- STYLES ----
 const JourneySection = styled.section`
   background: #ffffff;
   display: flex;
@@ -18,11 +17,7 @@ const JourneySection = styled.section`
   align-items: center;
   padding: 128px 0;
   gap: 128px;
-  font-family: Poppins;
-
-
 `;
-
 
 const JourneyTitle = styled.h2`
   font-size: 80px;
@@ -136,6 +131,7 @@ const ButtonRow = styled.div`
   margin-top: 8px;
 `;
 
+// ---- COMPONENT ----
 export const Journey = () => {
   const [showAll, setShowAll] = useState(false);
   const visiblePosts = showAll ? posts : posts.slice(0, 3);

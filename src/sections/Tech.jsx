@@ -3,11 +3,11 @@ import styled from "styled-components";
 import techData from "../data/tech.json";
 import { media } from "../data/media.js";
 
+// ---- STYLES ----
 const Wrap = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: Poppins;
   padding: 128px 0;
   gap: 16px;
   background: #000;
@@ -67,9 +67,9 @@ const Inner = styled.div`
   }
 `;
 
+// ---- COMPONENT ----
 export const Tech = () => {
   const techLine = techData.tech.join(", ");
-
   return (
     <Wrap id="tech">
       <Inner>

@@ -9,7 +9,6 @@ import { LiveIcon, CodeIcon } from "../components/Icons";
 import { SeeMoreButton } from "../components/SeeMoreButton";
 
 // ---- STYLES ----
-
 const ProjectsSection = styled.section`
   background: #ffffff;
   display: flex;
@@ -38,7 +37,6 @@ const ProjectsTitle = styled.h2`
   font-size: 80px;
   font-weight: 700;
   text-align: center;
-  font-family: Poppins;
 
   @media ${media.tablet} {
     font-size: 56px;
@@ -121,7 +119,6 @@ const ProjectContent = styled.div`
 const ProjectTitle = styled.h3`
   font-size: 30px;
   font-weight: 600;
-  font-family: Poppins;
 
   @media ${media.mobile} {
     font-size: 24px;
@@ -131,7 +128,6 @@ const ProjectTitle = styled.h3`
 const ProjectSummary = styled.p`
   font-size: 18px;
   line-height: 1.6;
-  font-family: Poppins;
 
   @media ${media.mobile} {
     font-size: 16px;
@@ -145,7 +141,6 @@ const ButtonsRow = styled.div`
   align-items: flex-start;
   gap: 8px;
   align-self: stretch;
-  font-family: Poppins;
 
   @media ${media.mobile} {
     align-items: stretch;
@@ -159,7 +154,6 @@ const ButtonsRow = styled.div`
 `;
 
 // ---- COMPONENT ----
-
 export const Projects = () => {
   const [showAll, setShowAll] = useState(false);
 

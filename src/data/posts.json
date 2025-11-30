@@ -2,7 +2,7 @@
   {
     "id": "post1",
     "title": "Pitch myself as a developer",
-    "excerpt": "Thoughts on how to effectively present myself in the tech industry.",
+    "excerpt": "Thoughts on how to to present myself in the tech industry.",
     "link": "https://www.linkedin.com/posts/jennifer-jansson_i-veckan-har-det-handlat-om-n%C3%A5got-som-l%C3%A4tt-activity-7395085710417973248-1x9O?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB3H4eMBXAYupsRoNRJuXMD_IcGjMjaH20k",
     "badge": "November 14th",
     "image": {
@@ -13,18 +13,18 @@
   {
     "id": "post2",
     "title": "Styled components",
-    "excerpt": "Learning a new way of styling when coding that feels more intuitive.",
-    "link": "https://styled-components.com/docs/basics",
+    "excerpt": "Learning a new way of styling and the advantages of styled-components compared to regular CSS.",
+    "link": "https://dev.to/pancompany/styled-components-why-you-should-or-should-not-use-it-23c",
     "badge": "November 24th",
     "image": {
       "src": "/post2.png",
-      "alt": "Picture of styled components code snippet but with a stylish twist of nails being painted"
+      "alt": "Picture of a mixed color background and styled components word"
     }
   },
   {
      "id": "post3",
     "title": "React - getting comfortable",
-    "excerpt": "React went from a human response to a practical tool",
+    "excerpt": "React went from a human response to a practical tool.",
     "link": "https://www.simplilearn.com/tutorials/reactjs-tutorial/what-is-reactjs",
     "badge": "November 18th",
     "image": {

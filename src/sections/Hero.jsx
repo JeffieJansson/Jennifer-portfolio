@@ -5,6 +5,7 @@ import Img2 from "/mic.png";
 import Img3 from "/arts.png";
 import { media } from "../data/media.js";
 
+// ---- STYLES ----
 const IntroWrapper = styled.header`
   display: flex;
   padding: 128px 24px 64px 24px;
@@ -12,14 +13,11 @@ const IntroWrapper = styled.header`
   align-items: center;
   gap: 16px;
   align-self: stretch;
-  font-family: Poppins;
 
-  /* Tablet */
   @media ${media.tablet} {
     padding: 96px 16px 64px 16px;
   }
 
-  /* Mobile */
   @media ${media.mobile} {
     padding: 64px 16px 48px 16px;
     gap: 24px;
@@ -153,6 +151,7 @@ const ImageBox = styled.div`
   }
 `;
 
+// ---- COMPONENT ----
 export const Hero = () => {
   return (
     <IntroWrapper>

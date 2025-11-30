@@ -19,12 +19,8 @@ const SkipLink = styled.a`
   z-index: 1000;
 
   &:focus-visible {
-    left: 16px; /* visas när man tabbar */
+    left: 16px;
   }
-`;
-
-const Main = styled.main`
-
 `;
 
 export const App = () => {
@@ -34,13 +30,13 @@ export const App = () => {
       <SkipLink href="#main-content">Skip to main content</SkipLink>
       <div className="app">
         <Hero />
-        <Main id="main-content">
+        <main id="main-content">
           <Tech />
           <Projects />
           <Skills />
           <Journey />
           <Contact />
-        </Main>
+        </main>
       </div>
     </>
   );
