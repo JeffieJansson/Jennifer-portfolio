@@ -22,10 +22,8 @@ const SeeMoreButtonBase = styled.button`
 
   &:hover {
     background: #000;
-    color: #fff;   
-          
+    color: #fff;       
   }
-
 `;
 
 
