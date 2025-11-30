@@ -82,18 +82,30 @@ const ProjectRow = styled.article`
   }
 `;
 
-const ProjectThumb = styled.img`
-  width: 479px;
-  height: 479px;
-  max-width: 100%;
+const ProjectThumb = styled.img.attrs({ loading: "lazy" })`
+  flex-shrink: 0;
   border-radius: 12px;
   object-fit: cover;
+  width: 479px;
+  height: 479px;
 
-  @media ${media.tablet} {
+ @media ${media.tablet} {
+    width: 696px;
+    height: 479px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media ${media.mobile} {
     width: 100%;
+    max-width: 343px;
+    aspect-ratio: 343 / 300;
     height: auto;
+    margin-left: auto;
+    margin-right: auto; 
   }
 `;
+
 
 const ProjectContent = styled.div`
   display: flex;

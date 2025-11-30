@@ -88,22 +88,50 @@ const IntroText = styled.section`
 const ImageBox = styled.div`
   position: relative;
   margin: 24px auto 32px;
-  width: 280px;   
-  height: 230px;    
+  width: 720px;
+  height: 400px;
+
+  @media ${media.tablet} {
+    width: 520px;
+    height: 320px;
+  }
+
+  @media ${media.mobile} {
+    width: 280px;
+    height: 230px;
+  }
 
   img {
     position: absolute;
-    width: 170px;  
-    height: 190px;
+    max-width: none;
     border-radius: 16px;
     object-fit: cover;
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
   }
 
-  /* left img*/
+  img {
+    width: 340px;
+    height: 360px;
+  }
+
+  @media ${media.tablet} {
+    img {
+      width: 240px;
+      height: 260px;
+    }
+  }
+
+  @media ${media.mobile} {
+    img {
+      width: 170px;
+      height: 190px;
+    }
+  }
+
+  /* left img */
   img:nth-child(1) {
-    left: -30px;
-    top: 26px;
+    left: 0;
+    top: 40px;
     transform: rotate(-9deg);
     z-index: 1;
   }
@@ -111,19 +139,18 @@ const ImageBox = styled.div`
   /* middle img */
   img:nth-child(2) {
     left: 50%;
-    top: 10px;
+    top: 18px;
     transform: translateX(-50%);
     z-index: 3;
   }
 
-  /*right img*/
+  /* right img*/
   img:nth-child(3) {
-    right: -30px;
-    top: 26px;
+    right: 0;
+    top: 40px;
     transform: rotate(9deg);
     z-index: 2;
   }
-
 `;
 
 export const Hero = () => {

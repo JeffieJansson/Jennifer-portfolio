@@ -46,11 +46,15 @@ const Columns = styled.div`
   width: 100%;
   max-width: 982px;
 
-  /* Tablet & mobile: EN kolumn, centrerad */
+
   @media ${media.tablet} {
     flex-direction: column;
     align-items: center;
     gap: 32px;
+  }
+  
+    @media ${media.mobile} {
+    align-items: flex-start;
   }
 `;
 
@@ -63,8 +67,8 @@ const Column = styled.div`
   line-height: 32px;
 
   @media ${media.mobile} {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 `;
 
@@ -107,6 +111,13 @@ const Item = styled.li`
   font-size: 18px;
   font-weight: 400;
   line-height: 32px;
+
+  @media ${media.tablet} {
+    text-align: center;
+  }
+   @media ${media.mobile} {
+    text-align: left;
+  }
 `;
 
 export const Skills = () => {

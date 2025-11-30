@@ -22,6 +22,8 @@ export const GlobalStyle = createGlobalStyle`
     color: #000000;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+
   }
 
   #root {
@@ -30,6 +32,7 @@ export const GlobalStyle = createGlobalStyle`
 
   img {
     max-width: 100%;
+    height: auto;
     display: block;
   }
 

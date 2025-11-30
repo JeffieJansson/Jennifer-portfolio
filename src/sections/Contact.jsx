@@ -18,6 +18,7 @@ const ContactSection = styled.section`
   gap: 16px;
   align-self: stretch;
   font-family: Poppins;
+  width: 100%;
 
   @media ${media.tablet} {
     padding: 96px 16px;
@@ -44,11 +45,13 @@ const ContactTitle = styled.h2`
   }
 `;
 
-const Avatar = styled.img`
+const Avatar = styled.img.attrs({ loading: "lazy" })`
   width: 164px;
   height: 164px;
   border-radius: 50%;
   object-fit: cover;
+  display: block;      
+  margin: 0 auto;        
 
   @media ${media.mobile} {
     width: 128px;
