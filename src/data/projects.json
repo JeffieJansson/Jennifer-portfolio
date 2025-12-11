@@ -64,5 +64,24 @@
       "src": "/accessibility.png",
       "alt": "Picture of web accessibility quiz results"
     }
+  },
+  {
+    "id": "happy thoughts",
+    "title": "Happy Thoughts - Real-Time Validation & API Integration",
+    "summary": " is a Twitter-inspired React application where users share positive messages (5-140 characters) and like others' thoughts. The app features real-time character validation with visual feedback, spam-prevention on likes, and loading states for seamless UX. Built with React hooks (useState, useEffect), it demonstrates clean component architecture with separation of concerns: a centralized API layer, controlled form components with comprehensive validation, and optimistic UI updates. The fully responsive design (320px-1600px+) includes accessibility features (ARIA labels, live regions) and follows DRY principles with well-documented, error-free code.",
+    "tags": [
+      "React",
+      "Javascript",
+      "CSS",
+      "API",
+      "Vite",
+      "react-timeago"
+    ],
+    "live": "https://jennifer-happy-thoughts.netlify.app/",
+    "code": "https://github.com/JeffieJansson/happy-thoughts",
+    "image": {
+      "src": "/happy.png",
+      "alt": "Picture of happy thoughts app"
+    }
   }
 ]
