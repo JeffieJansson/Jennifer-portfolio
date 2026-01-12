@@ -2,6 +2,35 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
  *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -19,11 +48,10 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     background-color: #ffffff;
-    color: #000000;
-    line-height: 1.5;
+    color: #2D2D2D;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-
   }
 
   #root {
@@ -42,12 +70,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
   
   a:focus-visible,
   button:focus-visible {
-    outline: 3px solid #e6229bff; 
+    outline: 3px solid #D4A5A5; 
     outline-offset: 4px;
   }
 
