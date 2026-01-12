@@ -10,7 +10,7 @@ import { SeeMoreButton } from "../components/SeeMoreButton";
 
 // ---- STYLES ----
 const ProjectsSection = styled.section`
-  background: #ffffff;
+  background: #FAF8F5;
   display: flex;
   justify-content: center;
   padding: 128px 0;
@@ -34,10 +34,11 @@ const ProjectsInner = styled.div`
 `;
 
 const ProjectsTitle = styled.h2`
-  font-size: 80px;
+  font-size: 72px;
   font-weight: 700;
   text-align: center;
-
+  color: #2D2D2D;
+  
   @media ${media.tablet} {
     font-size: 56px;
   }
@@ -82,10 +83,17 @@ const ProjectRow = styled.article`
 
 const ProjectThumb = styled.img.attrs({ loading: "lazy" })`
   flex-shrink: 0;
-  border-radius: 12px;
+  border-radius: 16px;
   object-fit: cover;
   width: 479px;
   height: 479px;
+  box-shadow: 0 20px 60px rgba(76, 58, 58, 0.7);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(76, 58, 58, 0.7);
+  }
 
  @media ${media.tablet} {
     width: 696px;
@@ -110,6 +118,8 @@ const ProjectContent = styled.div`
   flex-direction: column;
   gap: 16px;
   max-width: 560px;
+  position: relative;
+  z-index: 2;
 
   @media ${media.tablet} {
     max-width: 100%;
@@ -117,8 +127,10 @@ const ProjectContent = styled.div`
 `;
 
 const ProjectTitle = styled.h3`
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: 700;
+  color: #2D2D2D;
+  line-height: 1.2;
 
   @media ${media.mobile} {
     font-size: 24px;
