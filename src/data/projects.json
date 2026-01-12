@@ -83,5 +83,23 @@
       "src": "/happy.png",
       "alt": "Picture of happy thoughts app"
     }
+  },
+  {
+    "id": "movie-app",
+    "title": "Movie App - React & TMDB API",
+    "summary": "A React-based movie discovery application that fetches and displays popular movies using The Movie Database (TMDB) API. Users can browse a responsive grid of movie posters and click to view detailed information about each film.",
+    "tags": [
+      "React",
+      "JavaScript",
+      "CSS",
+      "TMDB API",
+      "Vite"
+    ],
+    "live": "https://browseflix.netlify.app/",
+    "code": "https://github.com/sandrahagevall/js-project-movies/tree/main",
+    "image": {
+      "src": "/movies.png",
+      "alt": "Picture of movie app"
+    }
   }
 ]
