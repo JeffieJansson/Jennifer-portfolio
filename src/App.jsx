@@ -1,10 +1,10 @@
 // src/App.jsx
 import { GlobalStyle } from "./components/GlobalStyles";
+import { Navigation } from "./components/Navigation";
 import { Hero } from "./sections/Hero";
-import { Tech } from "./sections/Tech";
+import { About } from "./sections/About";
 import { Projects } from "./sections/Projects";
 import { Skills } from "./sections/Skills";
-import { Journey } from "./sections/Journey";
 import { Contact } from "./sections/Contact";
 import styled from "styled-components";
 
@@ -28,16 +28,14 @@ export const App = () => {
     <>
       <GlobalStyle />
       <SkipLink href="#main-content">Skip to main content</SkipLink>
-      <div className="app">
-        <Hero />
-        <main id="main-content">
-          <Tech />
-          <Projects />
-          <Skills />
-          <Journey />
-          <Contact />
-        </main>
-      </div>
+      <Navigation />
+      <Hero />
+      <main id="main-content">
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+      </main>
     </>
   );
 };
