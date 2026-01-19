@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { media } from "../data/media.js";
 import {
   GitHubIcon,
-  InstagramIcon,
   LinkedInIcon,
-  StackOverflowIcon,
+  MailIcon,
+  DownloadIcon,
 } from "../components/Icons.jsx";
 import footerImage from "/footer.png";
 
@@ -56,7 +56,7 @@ const ContactSection = styled.section`
 `;
 
 const ContactTitle = styled.h2`
-  color: #ffffff;
+  color: #e8c4dd;
   text-align: center;
   font-size: 72px;
   font-weight: 700;
@@ -116,18 +116,27 @@ const Info = styled.div`
 
   p {
     color: #f5f5f5;
-    font-size: 28px;
-    margin: 12px 0;
+    font-size: 22px;
+    margin: 8px 0;
     font-weight: 400;
-    
-    &:first-child {
-      font-size: 32px;
-      font-weight: 600;
-      background: linear-gradient(135deg, #ffffff 0%, #e8c4dd 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+    opacity: 0.9;
+  }
+
+  .name {
+    font-size: 32px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ffffff 0%, #e8c4dd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+    opacity: 1;
+  }
+
+  .role {
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    opacity: 0.85;
   }
 
   a {
@@ -158,25 +167,53 @@ const Info = styled.div`
 
   @media ${media.tablet} {
     p {
-      font-size: 24px;
-      
-      &:first-child {
-        font-size: 28px;
-      }
+      font-size: 20px;
+    }
+
+    .name {
+      font-size: 28px;
     }
   }
 
   @media ${media.mobile} {
     p {
-      font-size: 18px;
-      margin: 10px 0;
-      
-      &:first-child {
-        font-size: 24px;
-      }
+      font-size: 16px;
+      margin: 6px 0;
+    }
+
+    .name {
+      font-size: 24px;
     }
   }
 `;
+
+const Availability = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #f5f5f5;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-top: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #8ef0b2;
+    box-shadow: 0 0 0 6px rgba(142, 240, 178, 0.12);
+  }
+
+  @media ${media.mobile} {
+    margin-top: 8px;
+  }
+`;
+
 
 const SocialRow = styled.div`
   display: flex;
@@ -233,16 +270,13 @@ export const Contact = () => (
     <ContactTitle id="contact-heading">Let’s Talk</ContactTitle>    <Divider />
     <Avatar src={footerImage} alt="Portrait of Jennifer Jansson" />
     <Info>
-      <p>Jennifer Jansson</p>
-      <p>
-        <a href="tel:+46763141262">+46 76 314 12 62</a>
-      </p>
-      <p>
-        <a href="mailto:jenniferjansson92@gmail.com">
-          jenniferjansson92@gmail.com
-        </a>
-      </p>
+      <p className="name">Jennifer Jansson</p>
+      <p className="role">Frontend Developer & Digital Analytics Specialist</p>
     </Info>
+    <Availability>
+      <span className="dot" aria-hidden="true"></span>
+      Available for work
+    </Availability>
 
     <SocialRow aria-label="Social media links">
       <a
@@ -264,21 +298,18 @@ export const Contact = () => (
       </a>
 
       <a
-        href="https://stackoverflow.com/users/31403265/jennifer-jansson"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Stack Overflow"
+        href="mailto:jenniferjansson92@gmail.com"
+        aria-label="Email Jennifer"
       >
-        <StackOverflowIcon />
+        <MailIcon />
       </a>
 
       <a
-        href="https://www.instagram.com/_jenniferjansson_/"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Instagram"
+        href="/tech-resume-jennifer.pdf"
+        download
+        aria-label="Download CV"
       >
-        <InstagramIcon />
+        <DownloadIcon />
       </a>
     </SocialRow>
   </ContactSection>
