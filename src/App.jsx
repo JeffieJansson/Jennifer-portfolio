@@ -6,6 +6,7 @@ import { About } from "./sections/About";
 import { Projects } from "./sections/Projects";
 import { Skills } from "./sections/Skills";
 import { Contact } from "./sections/Contact";
+import { Divider } from "./components/Divider";
 import styled from "styled-components";
 
 const SkipLink = styled.a`
@@ -30,10 +31,14 @@ export const App = () => {
       <SkipLink href="#main-content">Skip to main content</SkipLink>
       <Navigation />
       <Hero />
+      <Divider />
       <main id="main-content">
         <About />
+        <Divider />
         <Projects />
+        <Divider />
         <Skills />
+        <Divider />
         <Contact />
       </main>
     </>

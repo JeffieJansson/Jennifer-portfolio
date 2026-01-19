@@ -38,24 +38,28 @@ export const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    max-width: 100%;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: clip; /* prevent horizontal scrollbar from root */
   }
 
   body {
     min-height: 100vh;
     font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #fdfbfb 0%, #f8f5f9 50%, #fef9f8 100%);
     color: #2D2D2D;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   #root {
     min-height: 100vh;
+    overflow-x: clip;
   }
 
   img {

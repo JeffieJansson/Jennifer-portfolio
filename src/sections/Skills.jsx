@@ -5,7 +5,7 @@ import { media } from "../data/media.js";
 
 // ---- STYLES ----
 const SkillsSection = styled.section`
-  background: #FAF8F5;
+  background: transparent;
   display: flex;
   padding: 128px 80px;
   flex-direction: column;
@@ -14,6 +14,7 @@ const SkillsSection = styled.section`
   align-self: stretch;
   position: relative;
   overflow: hidden;
+  overflow-x: hidden;
 
 
   @media ${media.tablet} {

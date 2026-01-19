@@ -12,7 +12,6 @@ const IntroWrapper = styled.section`
   gap: 80px;
   margin-top: 60px;
   min-height: 100vh;
-  background: linear-gradient(135deg, #fdfbfb 0%, #f8f5f9 50%, #fef9f8 100%);
   position: relative;
   overflow: hidden;
 

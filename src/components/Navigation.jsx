@@ -9,7 +9,7 @@ const Nav = styled.nav`
   background-color: #ffffff;
   padding: 16px 24px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   z-index: 100;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -75,28 +75,6 @@ const MenuItem = styled.li`
   }
 `;
 
-const ContactButton = styled.button`
-  background: #1a1a1a;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: #667eea;
-    transform: translateY(-2px);
-  }
-
-  @media ${media.mobile} {
-    padding: 8px 16px;
-    font-size: 13px;
-  }
-`;
-
 export const Navigation = () => {
   return (
     <Nav>
@@ -114,7 +92,6 @@ export const Navigation = () => {
           <a href="#contact">Contact</a>
         </MenuItem>
       </Menu>
-      <ContactButton>Contact</ContactButton>
     </Nav>
   );
 };

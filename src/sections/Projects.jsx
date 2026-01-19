@@ -10,10 +10,11 @@ import { SeeMoreButton } from "../components/SeeMoreButton";
 
 // ---- STYLES ----
 const ProjectsSection = styled.section`
-  background: #FAF8F5;
+  background: transparent;
   display: flex;
   justify-content: center;
   padding: 128px 0;
+  overflow-x: hidden;
 
   @media ${media.tablet} {
     padding: 96px 16px;
