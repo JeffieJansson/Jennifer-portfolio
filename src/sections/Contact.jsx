@@ -7,7 +7,7 @@ import {
   MailIcon,
   DownloadIcon,
 } from "../components/Icons.jsx";
-import footerImage from "/footer.png";
+import footerImage from "/foot.png";
 
 // ---- STYLES ----
 const ContactSection = styled.section`
@@ -141,7 +141,7 @@ const Info = styled.div`
 
   a {
     text-decoration: none;
-    color: #f5f5f5;
+    color: #e8c4dd;
     transition: all 0.3s ease;
     position: relative;
     

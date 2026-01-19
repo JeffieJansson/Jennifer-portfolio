@@ -11,7 +11,7 @@
     "live": "https://frontendproject2025.netlify.app/",
     "code": "https://github.com/JeffieJansson/frontend-project",
     "image": {
-      "src": "/business.png",
+      "src": "/business1.png",
       "alt": "picture of record studio website"
     }
   },
@@ -28,7 +28,7 @@
     "live": "https://library-recipe.netlify.app/",
     "code": "https://github.com/JeffieJansson/recipe-library",
     "image": {
-      "src": "/recipe.jpg",
+      "src": "/recipe.png",
       "alt": "pictures of food recipes and filtering options"
     }
   },
@@ -61,7 +61,7 @@
     "live": "https://accessibilitymixedgroup.netlify.app/",
     "code": "https://github.com/irisdgz/js-project-accessibility",
     "image": {
-      "src": "/accessibility.png",
+      "src": "/quiz.png",
       "alt": "Picture of web accessibility quiz results"
     }
   },
@@ -117,7 +117,7 @@
     "live": "https://jeffie-todo-app.netlify.app/",
     "code": "https://github.com/JeffieJansson/todo",
     "image": {
-      "src": "/todo.png",
+      "src": "/todo1.png",
       "alt": "Picture of todo app with task list and completion tracking"
     }
   }

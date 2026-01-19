@@ -88,13 +88,7 @@ const ProjectThumb = styled.img.attrs({ loading: "lazy" })`
   object-fit: cover;
   width: 479px;
   height: 479px;
-  box-shadow: 0 20px 60px rgba(76, 58, 58, 0.7);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
 
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 30px 80px rgba(76, 58, 58, 0.7);
-  }
 
  @media ${media.tablet} {
     width: 696px;
