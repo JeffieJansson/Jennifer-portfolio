@@ -86,13 +86,13 @@ const ProjectThumb = styled.img.attrs({ loading: "lazy" })`
   flex-shrink: 0;
   border-radius: 16px;
   object-fit: cover;
-  width: 479px;
-  height: 479px;
+  width: 500px;
+  height: 489px;
 
 
  @media ${media.tablet} {
     width: 696px;
-    height: 479px;
+    height: 489px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -160,6 +160,22 @@ const ButtonsRow = styled.div`
   }
 `;
 
+const ProjectTagsRow = styled(TagsRow)`
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @media ${media.mobile} {
+    gap: 8px;
+  }
+`;
+
+const ProjectTag = styled(Tag)`
+  @media ${media.mobile} {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+`;
+
 // ---- COMPONENT ----
 export const Projects = () => {
   const [showAll, setShowAll] = useState(false);
@@ -187,11 +203,11 @@ export const Projects = () => {
 
               <ProjectContent>
                 {Array.isArray(project.tags) && project.tags.length > 0 && (
-                  <TagsRow>
+                  <ProjectTagsRow>
                     {project.tags.map((tag) => (
-                      <Tag key={tag}>{tag}</Tag>
+                      <ProjectTag key={tag}>{tag}</ProjectTag>
                     ))}
-                  </TagsRow>
+                  </ProjectTagsRow>
                 )}
 
                 <ProjectTitle>{project.title}</ProjectTitle>
