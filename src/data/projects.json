@@ -101,5 +101,24 @@
       "src": "/movies.png",
       "alt": "Picture of movie app"
     }
+  },
+  {
+    "id": "todo-app",
+    "title": "Todo App - Zustand State Management",
+    "summary": "A clean and responsive todo application built with React and Zustand for global state management. Users can add, remove, and toggle tasks between completed and uncompleted states. Features task counts, friendly empty states and full accessibility",
+    "tags": [
+      "React",
+      "Zustand",
+      "JavaScript",
+      "CSS",
+      "Vite",
+      "State Management"
+    ],
+    "live": "https://jeffie-todo-app.netlify.app/",
+    "code": "https://github.com/JeffieJansson/todo",
+    "image": {
+      "src": "/todo.png",
+      "alt": "Picture of todo app with task list and completion tracking"
+    }
   }
 ]

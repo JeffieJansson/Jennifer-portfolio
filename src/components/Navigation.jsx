@@ -19,20 +19,6 @@ const Nav = styled.nav`
   }
 `;
 
-const Logo = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 18px;
-  cursor: pointer;
-`;
-
 const Menu = styled.ul`
   display: flex;
   gap: 40px;
@@ -44,6 +30,10 @@ const Menu = styled.ul`
 
   @media ${media.mobile} {
     gap: 16px;
+  }
+
+  @media (max-width: 375px) {
+    gap: 9px;
   }
 `;
 
@@ -110,7 +100,6 @@ const ContactButton = styled.button`
 export const Navigation = () => {
   return (
     <Nav>
-      <Logo>JJ</Logo>
       <Menu>
         <MenuItem>
           <a href="#home">Home</a>

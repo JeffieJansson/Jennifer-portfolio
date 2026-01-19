@@ -44,12 +44,22 @@ const IntroWrapper = styled.section`
     padding: 100px 40px 60px 40px;
     gap: 50px;
     flex-direction: column;
+
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 
   @media ${media.mobile} {
     padding: 80px 24px 60px 24px;
     gap: 40px;
     flex-direction: column;
+
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 `;
 
