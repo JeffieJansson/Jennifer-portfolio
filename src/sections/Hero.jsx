@@ -206,7 +206,7 @@ export const Hero = () => {
         <h3>Hi there, I'm</h3>
         <Accent />
         <h1>Jennifer Jansson</h1>
-        <h2>Frontend Developer & Digital Analytics Specialist</h2>
+        <h2>Web Developer & Digital Analytics Specialist</h2>
       </IntroText>
       <ImageBox>
         <img src={PortraitImg} alt="Portrait of Jennifer" />

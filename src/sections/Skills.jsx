@@ -149,19 +149,6 @@ const List = styled.ul`
   gap: 0;
 `;
 
-const Item = styled.li`
-  color: #2D2D2D;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 32px;
-
-  @media ${media.tablet} {
-    text-align: center;
-  }
-  @media ${media.mobile} {
-    text-align: left;
-  }
-`;
 
 // ---- COMPONENT ----
 export const Skills = () => {

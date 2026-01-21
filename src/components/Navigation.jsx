@@ -49,7 +49,7 @@ const MenuItem = styled.li`
     position: relative;
 
     &:hover {
-      color: #667eea;
+      color: #8c4b73;
     }
 
     &::after {
@@ -59,7 +59,7 @@ const MenuItem = styled.li`
       left: 0;
       width: 0;
       height: 2px;
-      background: #667eea;
+      background: #2d2d2d;
       transition: width 0.3s ease;
     }
 
@@ -80,16 +80,44 @@ export const Navigation = () => {
     <Nav>
       <Menu>
         <MenuItem>
-          <a href="#home">Home</a>
+          <a 
+          href="#home"
+          onClick={() => window.dataLayer?.push({ event: 'click_nav_home' })}
+          >
+            Home
+          </a>
         </MenuItem>
         <MenuItem>
-          <a href="#about">About</a>
+          <a 
+            href="#about"
+            onClick={() => window.dataLayer?.push({ event: 'click_nav_about' })}
+          >
+            About
+          </a>
         </MenuItem>
         <MenuItem>
-          <a href="#projects">Projects</a>
+          <a 
+          href="#projects"
+          onClick={() => window.dataLayer?.push({ event: 'click_nav_projects' })}
+          >
+            Projects
+          </a>
         </MenuItem>
         <MenuItem>
-          <a href="#contact">Contact</a>
+          <a 
+          href="#skills"
+          onClick={() => window.dataLayer?.push({ event: 'click_nav_skills' })}
+          >
+            Skills
+          </a>
+        </MenuItem>
+        <MenuItem>
+          <a 
+          href="#contact"
+          onClick={() => window.dataLayer?.push({ event: 'click_nav_contact' })}
+          >
+            Contact
+          </a>
         </MenuItem>
       </Menu>
     </Nav>
