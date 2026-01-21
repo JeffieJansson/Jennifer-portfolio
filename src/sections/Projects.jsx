@@ -160,22 +160,6 @@ const ButtonsRow = styled.div`
   }
 `;
 
-const ProjectTagsRow = styled(TagsRow)`
-  flex-wrap: wrap;
-  gap: 10px;
-
-  @media ${media.mobile} {
-    gap: 8px;
-  }
-`;
-
-const ProjectTag = styled(Tag)`
-  @media ${media.mobile} {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-`;
-
 // ---- COMPONENT ----
 export const Projects = () => {
   const [showAll, setShowAll] = useState(false);
@@ -203,11 +187,11 @@ export const Projects = () => {
 
               <ProjectContent>
                 {Array.isArray(project.tags) && project.tags.length > 0 && (
-                  <ProjectTagsRow>
+                  <TagsRow>
                     {project.tags.map((tag) => (
-                      <ProjectTag key={tag}>{tag}</ProjectTag>
+                      <Tag key={tag}>{tag}</Tag>
                     ))}
-                  </ProjectTagsRow>
+                  </TagsRow>
                 )}
 
                 <ProjectTitle>{project.title}</ProjectTitle>
