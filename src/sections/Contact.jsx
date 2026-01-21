@@ -283,7 +283,8 @@ export const Contact = () => (
         href="https://www.linkedin.com/in/jennifer-jansson"
         target="_blank"
         rel="noreferrer"
-        aria-label="LinkedIn"
+        aria-label="LinkedIn profile"
+        onClick={() => window.dataLayer?.push({ event: 'click_linkedin' })}
       >
         <LinkedInIcon />
       </a>
@@ -292,7 +293,8 @@ export const Contact = () => (
         href="https://github.com/jeffiejansson"
         target="_blank"
         rel="noreferrer"
-        aria-label="GitHub"
+        aria-label="GitHub profile"
+        onClick={() => window.dataLayer?.push({ event: 'click_github' })}
       >
         <GitHubIcon />
       </a>
@@ -300,6 +302,7 @@ export const Contact = () => (
       <a
         href="mailto:jenniferjansson92@gmail.com"
         aria-label="Email Jennifer"
+        onClick={() => window.dataLayer?.push({ event: 'click_email' })}
       >
         <MailIcon />
       </a>
@@ -308,6 +311,7 @@ export const Contact = () => (
         href="/tech-resume-jennifer.pdf"
         download
         aria-label="Download CV"
+        onClick={() => window.dataLayer?.push({ event: 'download_cv' })}
       >
         <DownloadIcon />
       </a>
