@@ -207,6 +207,12 @@ export const Projects = () => {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => {
+                        window.dataLayer?.push({ 
+                          event: 'click_project_demo',
+                          project_name: project.title
+                        });
+                      }}
                     >
                       <LiveIcon aria-hidden="true" />
                       <span>Live demo</span>
@@ -219,6 +225,12 @@ export const Projects = () => {
                       href={project.code}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => {
+                        window.dataLayer?.push({ 
+                          event: 'click_project_code',
+                          project_name: project.title
+                        });
+                      }}
                     >
                       <CodeIcon aria-hidden="true" />
                       <span>View code</span>
