@@ -1,0 +1,37 @@
+{
+  "frontend": [
+    { "name": "HTML", "image":"/html.png" },
+    { "name": "CSS", "image": "/css.png" },
+    { "name": "JavaScript", "image": "/js.png" },
+    { "name": "TypeScript", "image": "/ts.png" },
+    { "name": "React", "image": "/react.png" },
+    { "name": "Next.js", "image": "/next.webp" },
+    { "name": "Zustand", "image": "/zustand.svg" },
+    { "name": "Web Accessibility", "image": "/webacc.png" }
+  ],
+  "backend": [
+    { "name": "Node.js", "image": "/node.png" },
+    { "name": "Express.js", "image": "/express.png" }
+  ],
+  "database": [
+    { "name": "MySQL", "image": "/mysql.svg" },
+    { "name": "MongoDB", "image": "/mongodb.svg" },
+    { "name": "localStorage", "image": "/ls.png" }
+  ],
+  "tools": [
+    { "name": "GitHub", "image": "/git.png" },
+    { "name": "VS Code", "image": "/vscode.png" },
+    { "name": "Postman", "image": "/postman.png" },
+    { "name": "Figma", "image": "/figma.png" }
+
+  ],
+  "digitalAnalytics": [
+    { "name": "BigQuery", "image": "/bigquery.png" },
+    { "name": "Looker Studio", "image": "/looker.svg" },
+    { "name": "Tag manager", "image": "/GTM.png" },
+    { "name": "Google Analytics", "image": "/GA4.png" },
+    { "name": "Google Search Console", "image": "/GSC.svg" },
+    { "name": "R-Studio", "image": "/rstudio.png" },
+    { "name": "SE Ranking", "image": "/seranking.png" }
+  ]
+}

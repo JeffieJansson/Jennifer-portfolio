@@ -4,9 +4,9 @@ import { Navigation } from "./components/Navigation";
 import { Hero } from "./sections/Hero";
 import { About } from "./sections/About";
 import { Projects } from "./sections/Projects";
-import { Skills } from "./sections/Skills";
 import { Contact } from "./sections/Contact";
 import { Divider } from "./components/Divider";
+import { Tech } from "./sections/Tech";
 import styled from "styled-components";
 
 const SkipLink = styled.a`
@@ -37,7 +37,7 @@ export const App = () => {
         <Divider />
         <Projects />
         <Divider />
-        <Skills />
+        <Tech />
         <Divider />
         <Contact />
       </main>
