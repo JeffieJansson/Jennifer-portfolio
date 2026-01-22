@@ -162,7 +162,7 @@ const ImageBox = styled.div`
 
   img {
     width: 100%;
-    max-width: 450px;
+    max-width: 380px;
     height: auto;
     aspect-ratio: 3/4;
     border-radius: 200px 200px 30px 30px;
@@ -174,11 +174,11 @@ const ImageBox = styled.div`
     animation: fadeInUp 0.8s ease-out 0.3s backwards;
 
     @media ${media.tablet} {
-      max-width: 380px;
+      max-width: 320px;
     }
 
     @media ${media.mobile} {
-      max-width: 280px;
+      max-width: 240px;
       border: 6px solid rgba(255, 255, 255, 0.8);
     }
   }
