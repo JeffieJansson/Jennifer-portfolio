@@ -9,5 +9,8 @@ export default defineConfig({
         plugins: [['babel-plugin-styled-components', { displayName: true }]]
       }
     })
-  ]
+  ],
+  build: {
+    sourcemap: true
+  }
 })
