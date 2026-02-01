@@ -270,7 +270,8 @@ export const About = () => {
           <p>
           I’m a creative, curious, and data-driven frontend developer in training, drawn to the challenge of making digital experiences feel simple and intuitive.
           My path has been anything but linear... from music and martial arts to logistics, customer service, and digital analytics. But every step taught me about people, focus, persistence, and how people interact with technology.
-          <br />
+          <br /><br />
+          
           I realized I didn’t just want to understand digital experiences, I wanted to build them. That insight pushed me out of my comfort zone and into the world of code.
           Today, I’m growing into a frontend developer who bridges the gap between data and code, with the goal of creating products that feel intuitive and deliver real value for real users.
           </p>
