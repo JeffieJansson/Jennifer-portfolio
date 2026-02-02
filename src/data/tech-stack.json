@@ -3,7 +3,6 @@
     { "name": "HTML", "image":"/html.png" },
     { "name": "CSS", "image": "/css.png" },
     { "name": "JavaScript", "image": "/js.png" },
-    { "name": "TypeScript", "image": "/ts.png" },
     { "name": "React", "image": "/react.png" },
     { "name": "Next.js", "image": "/next.webp" },
     { "name": "Zustand", "image": "/zustand.svg" },
@@ -14,7 +13,6 @@
     { "name": "Express.js", "image": "/express.png" }
   ],
   "database": [
-    { "name": "MySQL", "image": "/mysql.svg" },
     { "name": "MongoDB", "image": "/mongodb.svg" },
     { "name": "localStorage", "image": "/ls.png" }
   ],
