@@ -67,20 +67,23 @@
   },
   {
     "id": "happy thoughts",
-    "title": "Happy Thoughts - Real-Time Validation & API Integration",
-    "summary": " is a Twitter-inspired React application where users share positive messages (5-140 characters) and like others' thoughts. The app features real-time character validation with visual feedback, spam-prevention on likes, and loading states for seamless UX. Built with React hooks (useState, useEffect), it demonstrates clean component architecture with separation of concerns: a centralized API layer, controlled form components with comprehensive validation, and optimistic UI updates. The fully responsive design (320px-1600px+) includes accessibility features (ARIA labels, live regions) and follows DRY principles with well-documented, error-free code.",
+    "title": "Happy Thoughts - Fullstack Twitter-inspired App",
+    "summary": " is a Twitter-inspired fullstack application where users can share positive messages, like others’ thoughts, and manage their own posts. The project features a custom Express/MongoDB backend with schema validation, authentication, and a RESTful API, fully integrated with a modern React frontend. Users can sign up or log in to access protected features such as posting, editing, and deleting their own thoughts, with all communication secured by token-based authorization. Both frontend and backend provide real-time validation and error handling, ensuring a seamless and secure user experience. The app is fully responsive, accessible, and demonstrates clean code architecture with separation of concerns, DRY principles, and well-documented, maintainable code.",
     "tags": [
       "React",
-      "Javascript",
+      "JavaScript",
       "CSS",
       "API",
       "Vite",
-      "react-timeago"
+      "react-timeago",
+      "MongoDB",
+      "Express",
+      "Node.js"
     ],
     "live": "https://jennifer-happy-thoughts.netlify.app/",
     "code": "https://github.com/JeffieJansson/happy-thoughts",
     "image": {
-      "src": "/happy.png",
+      "src": "/happy-t.png",
       "alt": "Picture of happy thoughts app"
     }
   },
