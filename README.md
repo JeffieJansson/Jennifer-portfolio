@@ -1,19 +1,42 @@
-# Developer Portfolio – Jennifer Jansson
 
-This is my personal developer portfolio built with **React** and **styled-components**.  
-It showcases my projects, technical skills, articles, and ways to get in contact with me.  
-The design follows a provided Figma layout and the site is fully responsive.
+# Jennifer Jansson – Developer Portfolio
 
-## Features
+> A personal portfolio showcasing projects, skills, and ways to connect. Built with **React** and **styled-components**. Responsive design based on Figma. 
 
-- Hero section with introduction and portrait
-- Tech overview
-- Featured projects with links to GitHub and live demos
-- Skills section (Code, Toolbox, Upcoming, More)
-- My Words / thoughts about code
-- Contact section with social links
-- Accessible and responsive across all screen sizes from 320-1600px
-- Skip link and focus states for improved accessibility
+---
+
+## Project Title & Description
+
+**Developer Portfolio**
+
+This app displays my tech stack, featured projects, and contact info. Tech used: React, Vite, styled-components, JSON. Challenges: responsive design, accessibility, dynamic content. Future plans will be to add more projects.
+
+---
+
+## Installation & Usage
+
+Clone the repo, install dependencies, and start the dev server:
+
+```bash
+git clone https://github.com/JenniferJansson/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
+
+---
+
+## Screenshot
+
+![Portfolio Screenshot](public/portfolio-screenshot-jennifer.png)
+
+---
+
+## Deployed Link
+
+[Live Portfolio on Netlify](https://jeffies-portfolio.netlify.app/)
+
+---
 
 ## Tech Stack
 
@@ -21,11 +44,4 @@ The design follows a provided Figma layout and the site is fully responsive.
 - Vite
 - JavaScript (ES6)
 - styled-components
-- JSON data for dynamic content
-
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
+- JSON for content
