@@ -1,68 +1,65 @@
 [
-  {
-    "id": "business-site",
-    "title": "Business site",
-    "summary": "A fictional responsive website built with HTML, CSS & JavaScript. Includes hero video, card-based layout, signup form, and interactive hamburger menu. No backend connection — focus on responsive UI and clean code.",
+    {
+    "id": "Pantrymatch",
+    "title": "Pantrymatch - fullstack recipe search app",
+    "summary": "PantryMatch is a web app that helps users find recipes based on their available ingredients. The frontend uses React and styled-components for accessibility and responsive design. Users can search, filter, and save recipes, with custom checkboxes and radios for easy navigation. The backend runs on Express and MongoDB, connecting to the Spoonacular API for recipe data. It handles authentication, saving, and deleting recipes. The project features global styles, consistent colors, error handling, and is deployed with Netlify and Node.js.",
     "tags": [
-      "HTML",
-      "CSS",
-      "JavaScript"
-    ],
-    "live": "https://frontendproject2025.netlify.app/",
-    "code": "https://github.com/JeffieJansson/frontend-project",
-    "image": {
-      "src": "/business1.png",
-      "alt": "picture of record studio website"
-    }
-  },
-  {
-    "id": "recipe",
-    "title": "Recipe library",
-    "summary": "An interactive recipe web app with possibility to search, filter and sort recipes by cuisine, diet, time and popularity using Spoonacular API. Data normalized and cached in localStorage for better performance and offline access",
-    "tags": [
-      "HTML",
-      "CSS",
+      "React",
+      "Zustand",
       "JavaScript",
+      "Styled Components",
+      "Vite",
+      "State Management",
+      "custom hooks",
+      "localStorage",
+      "MongoDB",
+      "Express",
+      "Node.js",
       "Spoonacular API"
+
     ],
-    "live": "https://library-recipe.netlify.app/",
-    "code": "https://github.com/JeffieJansson/recipe-library",
+    "live": "https://pantrymatch.netlify.app/",
+    "code": "https://github.com/JeffieJansson/pantrymatch",
     "image": {
-      "src": "/recipe.png",
-      "alt": "pictures of food recipes and filtering options"
+      "src": "/pantrymatch.png",
+      "alt": "Picture of search recipe app with search results and filtering options"
     }
   },
   {
-    "id": "weather",
-    "title": "Weather app – SMHI API",
-    "summary": "A responsive weather app displaying current weather conditions and 5-day forecasts for multiple Swedish cities using the SMHI API. Built collaboratively using Git and TypeScript for safer data handling and cleaner code.",
+    "id": "todo-app",
+    "title": "Todo App - Zustand State Management",
+    "summary": "A clean and responsive todo application built with React and Zustand for global state management. Users can add, remove, and toggle tasks between completed and uncompleted states. Features task counts, friendly empty states and full accessibility",
     "tags": [
-      "HTML",
+      "React",
+      "Zustand",
+      "JavaScript",
       "CSS",
-      "TypeScript",
-      "SMHI API"
+      "Vite",
+      "State Management"
     ],
-    "live": "https://project-weather-app-b2.netlify.app/",
-    "code": "https://github.com/marinalendt-png/js-project-weather-app",
+    "live": "https://jeffie-todo-app.netlify.app/",
+    "code": "https://github.com/JeffieJansson/todo",
     "image": {
-      "src": "/weather.png",
-      "alt": "picture of weather app"
+      "src": "/todo1.png",
+      "alt": "Picture of todo app with task list and completion tracking"
     }
   },
   {
-    "id": "accessibility",
-    "title": "Build a Quiz with Web Accessibility in mind",
-    "summary": "A responsive Quiz build with web accessibility in mind. The quiz tests users' knowledge of the team that built the website through multiple-choice questions. It provides instant feedback on answers and a final score at the end. As a second page reveals information about the team and answers to the quiz questions.",
+    "id": "movie-app",
+    "title": "Movie App - React & TMDB API",
+    "summary": "A React-based movie discovery application that fetches and displays popular movies using The Movie Database (TMDB) API. Users can browse a responsive grid of movie posters and click to view detailed information about each film.",
     "tags": [
-      "HTML",
+      "React",
+      "JavaScript",
       "CSS",
-      "JavaScript"
+      "TMDB API",
+      "Vite"
     ],
-    "live": "https://accessibilitymixedgroup.netlify.app/",
-    "code": "https://github.com/irisdgz/js-project-accessibility",
+    "live": "https://browseflix.netlify.app/",
+    "code": "https://github.com/sandrahagevall/js-project-movies/tree/main",
     "image": {
-      "src": "/quiz.png",
-      "alt": "Picture of web accessibility quiz results"
+      "src": "/movies.png",
+      "alt": "Picture of movie app"
     }
   },
   {
@@ -88,40 +85,69 @@
     }
   },
   {
-    "id": "movie-app",
-    "title": "Movie App - React & TMDB API",
-    "summary": "A React-based movie discovery application that fetches and displays popular movies using The Movie Database (TMDB) API. Users can browse a responsive grid of movie posters and click to view detailed information about each film.",
+    "id": "accessibility",
+    "title": "Build a Quiz with Web Accessibility in mind",
+    "summary": "A responsive Quiz build with web accessibility in mind. The quiz tests users' knowledge of the team that built the website through multiple-choice questions. It provides instant feedback on answers and a final score at the end. As a second page reveals information about the team and answers to the quiz questions.",
     "tags": [
-      "React",
-      "JavaScript",
+      "HTML",
       "CSS",
-      "TMDB API",
-      "Vite"
+      "JavaScript"
     ],
-    "live": "https://browseflix.netlify.app/",
-    "code": "https://github.com/sandrahagevall/js-project-movies/tree/main",
+    "live": "https://accessibilitymixedgroup.netlify.app/",
+    "code": "https://github.com/irisdgz/js-project-accessibility",
     "image": {
-      "src": "/movies.png",
-      "alt": "Picture of movie app"
+      "src": "/quiz.png",
+      "alt": "Picture of web accessibility quiz results"
     }
   },
   {
-    "id": "todo-app",
-    "title": "Todo App - Zustand State Management",
-    "summary": "A clean and responsive todo application built with React and Zustand for global state management. Users can add, remove, and toggle tasks between completed and uncompleted states. Features task counts, friendly empty states and full accessibility",
+    "id": "weather",
+    "title": "Weather app – SMHI API",
+    "summary": "A responsive weather app displaying current weather conditions and 5-day forecasts for multiple Swedish cities using the SMHI API. Built collaboratively using Git and TypeScript for safer data handling and cleaner code.",
     "tags": [
-      "React",
-      "Zustand",
-      "JavaScript",
+      "HTML",
       "CSS",
-      "Vite",
-      "State Management"
+      "TypeScript",
+      "SMHI API"
     ],
-    "live": "https://jeffie-todo-app.netlify.app/",
-    "code": "https://github.com/JeffieJansson/todo",
+    "live": "https://project-weather-app-b2.netlify.app/",
+    "code": "https://github.com/marinalendt-png/js-project-weather-app",
     "image": {
-      "src": "/todo1.png",
-      "alt": "Picture of todo app with task list and completion tracking"
+      "src": "/weather.png",
+      "alt": "picture of weather app"
+    }
+  },
+  {
+    "id": "recipe",
+    "title": "Recipe library",
+    "summary": "An interactive recipe web app with possibility to search, filter and sort recipes by cuisine, diet, time and popularity using Spoonacular API. Data normalized and cached in localStorage for better performance and offline access",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Spoonacular API"
+    ],
+    "live": "https://library-recipe.netlify.app/",
+    "code": "https://github.com/JeffieJansson/recipe-library",
+    "image": {
+      "src": "/recipe.png",
+      "alt": "pictures of food recipes and filtering options"
+    }
+  },
+  {
+    "id": "business-site",
+    "title": "Business site",
+    "summary": "A fictional responsive website built with HTML, CSS & JavaScript. Includes hero video, card-based layout, signup form, and interactive hamburger menu. No backend connection — focus on responsive UI and clean code.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "live": "https://frontendproject2025.netlify.app/",
+    "code": "https://github.com/JeffieJansson/frontend-project",
+    "image": {
+      "src": "/business1.png",
+      "alt": "picture of record studio website"
     }
   }
 ]

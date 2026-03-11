@@ -85,14 +85,16 @@ const ProjectRow = styled.article`
 const ProjectThumb = styled.img.attrs({ loading: "lazy" })`
   flex-shrink: 0;
   border-radius: 16px;
-  object-fit: cover;
+  object-fit: contain;
   width: 500px;
-  height: 489px;
+  height: auto;
+  max-height: 489px;
+ 
 
-
- @media ${media.tablet} {
+  @media ${media.tablet} {
     width: 696px;
-    height: 489px;
+    height: auto;
+    max-height: 489px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -102,6 +104,7 @@ const ProjectThumb = styled.img.attrs({ loading: "lazy" })`
     max-width: 343px;
     aspect-ratio: 343 / 300;
     height: auto;
+    max-height: 300px;
     margin-left: auto;
     margin-right: auto; 
   }
