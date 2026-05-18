@@ -12,13 +12,13 @@ import { useInView } from "../hooks/useInView.js";
 
 // ---- STYLES ----
 const ContactSection = styled.section`
-  background: linear-gradient(135deg, #2d2d2d 0%, #4a3d4a 50%, #3d4a4a 100%);
+  background: var(--surface);
+  border-top: 1px solid rgba(201, 169, 110, 0.12);
   display: flex;
-  padding: 96px 60px 60px 60px;
+  padding: 72px 60px 56px 60px;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  align-self: stretch;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -27,166 +27,109 @@ const ContactSection = styled.section`
     content: "";
     position: absolute;
     top: -100px;
-    left: -100px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(232, 196, 221, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(201, 169, 110, 0.05) 0%, transparent 70%);
     pointer-events: none;
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -120px;
-    right: -120px;
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, rgba(196, 216, 236, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-
-  @media ${media.tablet} {
-    padding: 72px 40px 48px 40px;
-  }
-
-  @media ${media.mobile} {
-    padding: 48px 24px 40px 24px;
-  }
+  @media ${media.tablet} { padding: 56px 40px 44px 40px; }
+  @media ${media.mobile} { padding: 44px 24px 36px 24px; }
 `;
+
 
 const ContactTitle = styled.h2`
   text-align: center;
-  font-size: clamp(40px, 5vw, 60px);
-  font-weight: 700;
-  line-height: normal;
-  background: linear-gradient(135deg, #ffffff 0%, #e8c4dd 100%);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--gold-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   z-index: 2;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
   opacity: ${({ $inView }) => ($inView ? 1 : 0)};
   transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(24px)")};
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 `;
 
-const Divider = styled.div`
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, #e8c4dd 0%, #c4d8ec 100%);
-  border-radius: 2px;
-  margin: 8px 0 32px 0;
+const GoldDivider = styled.div`
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 8px 0 24px 0;
   z-index: 2;
   opacity: ${({ $inView }) => ($inView ? 1 : 0)};
   transition: opacity 0.8s ease-out 0.1s;
-
-  @media ${media.mobile} {
-    width: 60px;
-    margin: 8px 0 24px 0;
-  }
 `;
 
 const Avatar = styled.img.attrs({ loading: "lazy" })`
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
   margin: 0 auto;
-  border: 4px solid rgba(232, 196, 221, 0.3);
-  box-shadow: 0 20px 50px rgba(232, 196, 221, 0.15);
+  border: 1px solid rgba(201, 169, 110, 0.3);
+  box-shadow: 0 0 0 4px rgba(201, 169, 110, 0.06), 0 20px 40px rgba(0, 0, 0, 0.4);
   z-index: 2;
   opacity: ${({ $inView }) => ($inView ? 1 : 0)};
   transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(16px)")};
   transition: opacity 0.7s ease-out 0.15s, transform 0.7s ease-out 0.15s;
 
   @media ${media.mobile} {
-    width: 110px;
-    height: 110px;
-    border: 3px solid rgba(232, 196, 221, 0.3);
+    width: 96px;
+    height: 96px;
   }
 `;
 
 const Info = styled.div`
   text-align: center;
-  margin-top: 16px;
+  margin-top: 12px;
   z-index: 2;
   opacity: ${({ $inView }) => ($inView ? 1 : 0)};
   transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(16px)")};
   transition: opacity 0.7s ease-out 0.2s, transform 0.7s ease-out 0.2s;
 
   p {
-    color: #f5f5f5;
-    font-size: 18px;
-    margin: 6px 0;
-    font-weight: 400;
-    opacity: 0.9;
+    color: var(--cream-dim);
+    font-size: 15px;
+    margin: 4px 0;
+    font-weight: 300;
   }
 
   .name {
-    font-size: 26px;
-    font-weight: 600;
-    background: linear-gradient(135deg, #ffffff 0%, #e8c4dd 100%);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--gold-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 4px;
-    opacity: 1;
+    margin-bottom: 2px;
   }
 
   .role {
-    font-size: 16px;
-    letter-spacing: 0.2px;
-    opacity: 0.85;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: var(--cream-muted);
+    text-transform: uppercase;
   }
 
   a {
-    text-decoration: none;
-    color: #e8c4dd;
-    transition: all 0.3s ease;
-    position: relative;
+    color: var(--gold);
+    transition: opacity 0.2s ease;
+    font-size: 13px;
 
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: linear-gradient(90deg, #e8c4dd 0%, #c4d8ec 100%);
-      transition: width 0.3s ease;
-    }
-
-    &:hover::after {
-      width: 100%;
-    }
-
-    &:hover {
-      color: #e8c4dd;
-    }
-  }
-
-  @media ${media.tablet} {
-    p {
-      font-size: 17px;
-    }
-
-    .name {
-      font-size: 24px;
-    }
+    &:hover { opacity: 0.7; }
   }
 
   @media ${media.mobile} {
-    p {
-      font-size: 15px;
-      margin: 5px 0;
-    }
-
-    .name {
-      font-size: 20px;
-    }
+    p { font-size: 14px; }
+    .name { font-size: 20px; }
   }
 `;
 
@@ -194,81 +137,67 @@ const Availability = styled.span`
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 14px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #f5f5f5;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  margin-top: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  color: var(--cream-dim);
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 8px;
   opacity: ${({ $inView }) => ($inView ? 1 : 0)};
   transition: opacity 0.7s ease-out 0.25s;
 
   .dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: #7bc99a;
-    box-shadow: 0 0 0 6px rgba(123, 201, 154, 0.2);
-  }
-
-  @media ${media.mobile} {
-    margin-top: 8px;
+    background: #6DBF8D;
+    box-shadow: 0 0 0 4px rgba(109, 191, 141, 0.15);
   }
 `;
 
 const SocialRow = styled.div`
   display: flex;
   align-items: center;
-  gap: 32px;
-  margin-top: 24px;
+  gap: 28px;
+  margin-top: 20px;
   z-index: 2;
   opacity: ${({ $inView }) => ($inView ? 1 : 0)};
   transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(16px)")};
   transition: opacity 0.7s ease-out 0.3s, transform 0.7s ease-out 0.3s;
 
   a {
-    color: #f5f5f5;
+    color: var(--cream-muted);
     text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      width: 60px;
-      height: 60px;
-      background: radial-gradient(circle, rgba(232, 196, 221, 0.15) 0%, transparent 70%);
-      border-radius: 50%;
-      transition: transform 0.3s ease;
-      z-index: -1;
-    }
+    transition: color 0.25s ease, transform 0.25s ease;
 
     &:hover {
-      color: #e8c4dd;
+      color: var(--gold);
       transform: translateY(-3px);
-
-      &::before {
-        transform: translate(-50%, -50%) scale(1);
-      }
     }
 
-    svg {
-      transition: all 0.3s ease;
-    }
+    svg { width: 24px; height: 24px; }
   }
 
   @media ${media.mobile} {
-    gap: 24px;
+    gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 24px;
   }
+`;
+
+const CopyrightLine = styled.p`
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: var(--cream-muted);
+  letter-spacing: 0.5px;
+  margin-top: 24px;
+  opacity: ${({ $inView }) => ($inView ? 0.5 : 0)};
+  transition: opacity 0.7s ease-out 0.4s;
 `;
 
 // ---- COMPONENT ----
@@ -279,12 +208,8 @@ export const Contact = () => {
       <ContactTitle id="contact-heading" $inView={inView}>
         Let's Talk
       </ContactTitle>
-      <Divider $inView={inView} />
-      <Avatar
-        src={footerImage}
-        alt="Portrait of Jennifer Jansson"
-        $inView={inView}
-      />
+      <GoldDivider $inView={inView} />
+      <Avatar src={footerImage} alt="Portrait of Jennifer Jansson" $inView={inView} />
       <Info $inView={inView}>
         <p className="name">Jennifer Jansson</p>
         <p className="role">Frontend Developer & Digital Analytics Specialist</p>
@@ -307,6 +232,7 @@ export const Contact = () => {
           target="_blank"
           rel="noreferrer"
           aria-label="LinkedIn profile"
+          title="LinkedIn"
           onClick={() => window.dataLayer?.push({ event: "click_linkedin" })}
         >
           <LinkedInIcon />
@@ -316,6 +242,7 @@ export const Contact = () => {
           target="_blank"
           rel="noreferrer"
           aria-label="GitHub profile"
+          title="GitHub"
           onClick={() => window.dataLayer?.push({ event: "click_github" })}
         >
           <GitHubIcon />
@@ -323,6 +250,7 @@ export const Contact = () => {
         <a
           href="mailto:jenniferjansson92@gmail.com"
           aria-label="Email Jennifer"
+          title="Email"
         >
           <MailIcon />
         </a>
@@ -330,11 +258,15 @@ export const Contact = () => {
           href="/tech-resume-jennifer.pdf"
           download
           aria-label="Download CV"
+          title="Download CV"
           onClick={() => window.dataLayer?.push({ event: "download_cv" })}
         >
           <DownloadIcon />
         </a>
       </SocialRow>
+      <CopyrightLine $inView={inView}>
+        © 2025 Jennifer Jansson
+      </CopyrightLine>
     </ContactSection>
   );
 };
