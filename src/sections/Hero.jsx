@@ -171,7 +171,7 @@ const ImageBox = styled.div`
     border: 8px solid rgba(255, 255, 255, 0.8);
     position: relative;
     z-index: 1;
-    animation: fadeInUp 0.8s ease-out 0.3s backwards;
+    animation: fadeInUp 0.8s ease-out 0.3s backwards, float 4s ease-in-out 1.1s infinite;
 
     @media ${media.tablet} {
       max-width: 320px;

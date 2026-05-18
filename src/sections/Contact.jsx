@@ -8,6 +8,7 @@ import {
   DownloadIcon,
 } from "../components/Icons.jsx";
 import footerImage from "/foot.png";
+import { useInView } from "../hooks/useInView.js";
 
 // ---- STYLES ----
 const ContactSection = styled.section`
@@ -56,9 +57,8 @@ const ContactSection = styled.section`
 `;
 
 const ContactTitle = styled.h2`
-  color: #e8c4dd;
   text-align: center;
-  font-size: 56px;
+  font-size: clamp(40px, 5vw, 60px);
   font-weight: 700;
   line-height: normal;
   background: linear-gradient(135deg, #ffffff 0%, #e8c4dd 100%);
@@ -67,14 +67,9 @@ const ContactTitle = styled.h2`
   background-clip: text;
   z-index: 2;
   margin-bottom: 12px;
-
-  @media ${media.tablet} {
-    font-size: 44px;
-  }
-
-  @media ${media.mobile} {
-    font-size: 32px;
-  }
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(24px)")};
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 `;
 
 const Divider = styled.div`
@@ -84,6 +79,8 @@ const Divider = styled.div`
   border-radius: 2px;
   margin: 8px 0 32px 0;
   z-index: 2;
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transition: opacity 0.8s ease-out 0.1s;
 
   @media ${media.mobile} {
     width: 60px;
@@ -96,11 +93,14 @@ const Avatar = styled.img.attrs({ loading: "lazy" })`
   height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  display: block;      
+  display: block;
   margin: 0 auto;
   border: 4px solid rgba(232, 196, 221, 0.3);
   box-shadow: 0 20px 50px rgba(232, 196, 221, 0.15);
   z-index: 2;
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(16px)")};
+  transition: opacity 0.7s ease-out 0.15s, transform 0.7s ease-out 0.15s;
 
   @media ${media.mobile} {
     width: 110px;
@@ -113,6 +113,9 @@ const Info = styled.div`
   text-align: center;
   margin-top: 16px;
   z-index: 2;
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(16px)")};
+  transition: opacity 0.7s ease-out 0.2s, transform 0.7s ease-out 0.2s;
 
   p {
     color: #f5f5f5;
@@ -144,7 +147,7 @@ const Info = styled.div`
     color: #e8c4dd;
     transition: all 0.3s ease;
     position: relative;
-    
+
     &::after {
       content: "";
       position: absolute;
@@ -155,7 +158,7 @@ const Info = styled.div`
       background: linear-gradient(90deg, #e8c4dd 0%, #c4d8ec 100%);
       transition: width 0.3s ease;
     }
-    
+
     &:hover::after {
       width: 100%;
     }
@@ -200,13 +203,15 @@ const Availability = styled.span`
   letter-spacing: 0.3px;
   margin-top: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transition: opacity 0.7s ease-out 0.25s;
 
   .dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #8ef0b2;
-    box-shadow: 0 0 0 6px rgba(142, 240, 178, 0.12);
+    background: #7bc99a;
+    box-shadow: 0 0 0 6px rgba(123, 201, 154, 0.2);
   }
 
   @media ${media.mobile} {
@@ -214,13 +219,15 @@ const Availability = styled.span`
   }
 `;
 
-
 const SocialRow = styled.div`
   display: flex;
   align-items: center;
   gap: 32px;
   margin-top: 24px;
   z-index: 2;
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(16px)")};
+  transition: opacity 0.7s ease-out 0.3s, transform 0.7s ease-out 0.3s;
 
   a {
     color: #f5f5f5;
@@ -245,7 +252,7 @@ const SocialRow = styled.div`
     &:hover {
       color: #e8c4dd;
       transform: translateY(-3px);
-      
+
       &::before {
         transform: translate(-50%, -50%) scale(1);
       }
@@ -265,56 +272,69 @@ const SocialRow = styled.div`
 `;
 
 // ---- COMPONENT ----
-export const Contact = () => (
-  <ContactSection id="contact" aria-labelledby="contact-heading">
-    <ContactTitle id="contact-heading">Let’s Talk</ContactTitle>    <Divider />
-    <Avatar src={footerImage} alt="Portrait of Jennifer Jansson" />
-    <Info>
-      <p className="name">Jennifer Jansson</p>
-      <p className="role">Frontend Developer & Digital Analytics Specialist</p>
-    </Info>
-    <Availability>
-      <span className="dot" aria-hidden="true"></span>
-      Available for work
-    </Availability>
-
-    <SocialRow aria-label="Social media links">
-      <a
-        href="https://www.linkedin.com/in/jennifer-jansson"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="LinkedIn profile"
-        onClick={() => window.dataLayer?.push({ event: 'click_linkedin' })}
-      >
-        <LinkedInIcon />
-      </a>
-
-      <a
-        href="https://github.com/jeffiejansson"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="GitHub profile"
-        onClick={() => window.dataLayer?.push({ event: 'click_github' })}
-      >
-        <GitHubIcon />
-      </a>
-
-      <a
-        href="mailto:jenniferjansson92@gmail.com"
-        aria-label="Email Jennifer"
-        onClick={() => window.dataLayer?.push({ event: 'click_email' })}
-      >
-        <MailIcon />
-      </a>
-
-      <a
-        href="/tech-resume-jennifer.pdf"
-        download
-        aria-label="Download CV"
-        onClick={() => window.dataLayer?.push({ event: 'download_cv' })}
-      >
-        <DownloadIcon />
-      </a>
-    </SocialRow>
-  </ContactSection>
-);
+export const Contact = () => {
+  const [ref, inView] = useInView(0.1);
+  return (
+    <ContactSection id="contact" ref={ref} aria-labelledby="contact-heading">
+      <ContactTitle id="contact-heading" $inView={inView}>
+        Let's Talk
+      </ContactTitle>
+      <Divider $inView={inView} />
+      <Avatar
+        src={footerImage}
+        alt="Portrait of Jennifer Jansson"
+        $inView={inView}
+      />
+      <Info $inView={inView}>
+        <p className="name">Jennifer Jansson</p>
+        <p className="role">Frontend Developer & Digital Analytics Specialist</p>
+        <p>
+          <a
+            href="mailto:jenniferjansson92@gmail.com"
+            onClick={() => window.dataLayer?.push({ event: "click_email" })}
+          >
+            jenniferjansson92@gmail.com
+          </a>
+        </p>
+      </Info>
+      <Availability $inView={inView}>
+        <span className="dot" aria-hidden="true"></span>
+        Available for work
+      </Availability>
+      <SocialRow $inView={inView} aria-label="Social media links">
+        <a
+          href="https://www.linkedin.com/in/jennifer-jansson"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn profile"
+          onClick={() => window.dataLayer?.push({ event: "click_linkedin" })}
+        >
+          <LinkedInIcon />
+        </a>
+        <a
+          href="https://github.com/jeffiejansson"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub profile"
+          onClick={() => window.dataLayer?.push({ event: "click_github" })}
+        >
+          <GitHubIcon />
+        </a>
+        <a
+          href="mailto:jenniferjansson92@gmail.com"
+          aria-label="Email Jennifer"
+        >
+          <MailIcon />
+        </a>
+        <a
+          href="/tech-resume-jennifer.pdf"
+          download
+          aria-label="Download CV"
+          onClick={() => window.dataLayer?.push({ event: "download_cv" })}
+        >
+          <DownloadIcon />
+        </a>
+      </SocialRow>
+    </ContactSection>
+  );
+};

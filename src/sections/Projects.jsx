@@ -7,6 +7,7 @@ import Button from "../components/Button";
 import { TagsRow, Tag } from "../components/Card";
 import { LiveIcon, CodeIcon } from "../components/Icons";
 import { SeeMoreButton } from "../components/SeeMoreButton";
+import { useInView } from "../hooks/useInView.js";
 
 // ---- STYLES ----
 const ProjectsSection = styled.section`
@@ -35,18 +36,13 @@ const ProjectsInner = styled.div`
 `;
 
 const ProjectsTitle = styled.h2`
-  font-size: 72px;
+  font-size: clamp(40px, 5vw, 60px);
   font-weight: 700;
   text-align: center;
   color: #2D2D2D;
-  
-  @media ${media.tablet} {
-    font-size: 56px;
-  }
-
-  @media ${media.mobile} {
-    font-size: 40px;
-  }
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(24px)")};
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 `;
 
 const ProjectsList = styled.div`
@@ -70,6 +66,9 @@ const ProjectRow = styled.article`
   gap: 64px;
   align-self: stretch;
   flex-direction: ${({ $reverse }) => ($reverse ? "row-reverse" : "row")};
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(24px)")};
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 
   @media ${media.tablet} {
     flex-direction: column;
@@ -89,7 +88,6 @@ const ProjectThumb = styled.img.attrs({ loading: "lazy" })`
   width: 500px;
   height: auto;
   max-height: 489px;
- 
 
   @media ${media.tablet} {
     width: 696px;
@@ -106,10 +104,9 @@ const ProjectThumb = styled.img.attrs({ loading: "lazy" })`
     height: auto;
     max-height: 300px;
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;
   }
 `;
-
 
 const ProjectContent = styled.div`
   display: flex;
@@ -163,9 +160,71 @@ const ButtonsRow = styled.div`
   }
 `;
 
+// ---- ANIMATED ROW ----
+const AnimatedProjectRow = ({ project, index }) => {
+  const [ref, inView] = useInView(0.1);
+  return (
+    <ProjectRow ref={ref} $reverse={index % 2 === 1} $inView={inView}>
+      {project.image && (
+        <ProjectThumb src={project.image.src} alt={project.image.alt} />
+      )}
+      <ProjectContent>
+        {Array.isArray(project.tags) && project.tags.length > 0 && (
+          <TagsRow>
+            {project.tags.map((tag) => (
+              <Tag key={tag}>{tag}</Tag>
+            ))}
+          </TagsRow>
+        )}
+        <ProjectTitle>{project.title}</ProjectTitle>
+        {project.summary && (
+          <ProjectSummary>{project.summary}</ProjectSummary>
+        )}
+        <ButtonsRow>
+          {project.live && (
+            <Button
+              as="a"
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                window.dataLayer?.push({
+                  event: "click_project_demo",
+                  project_name: project.title,
+                });
+              }}
+            >
+              <LiveIcon aria-hidden="true" />
+              <span>Live demo</span>
+            </Button>
+          )}
+          {project.code && (
+            <Button
+              as="a"
+              href={project.code}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                window.dataLayer?.push({
+                  event: "click_project_code",
+                  project_name: project.title,
+                });
+              }}
+            >
+              <CodeIcon aria-hidden="true" />
+              <span>View code</span>
+            </Button>
+          )}
+        </ButtonsRow>
+      </ProjectContent>
+    </ProjectRow>
+  );
+};
+
 // ---- COMPONENT ----
 export const Projects = () => {
   const [showAll, setShowAll] = useState(false);
+  const [titleRef, titleInView] = useInView(0.05);
 
   const visibleProjects = showAll ? projects : projects.slice(0, 3);
   const hasMoreProjects = projects.length > 3;
@@ -173,78 +232,14 @@ export const Projects = () => {
   return (
     <ProjectsSection id="projects">
       <ProjectsInner>
-        <ProjectsTitle>Featured Projects</ProjectsTitle>
-
+        <ProjectsTitle ref={titleRef} $inView={titleInView}>
+          Featured Projects
+        </ProjectsTitle>
         <ProjectsList>
           {visibleProjects.map((project, index) => (
-            <ProjectRow
-              key={project.id}
-              $reverse={index % 2 === 1} // desktop: every second project is reversed
-            >
-              {project.image && (
-                <ProjectThumb
-                  src={project.image.src}
-                  alt={project.image.alt}
-                />
-              )}
-
-              <ProjectContent>
-                {Array.isArray(project.tags) && project.tags.length > 0 && (
-                  <TagsRow>
-                    {project.tags.map((tag) => (
-                      <Tag key={tag}>{tag}</Tag>
-                    ))}
-                  </TagsRow>
-                )}
-
-                <ProjectTitle>{project.title}</ProjectTitle>
-
-                {project.summary && (
-                  <ProjectSummary>{project.summary}</ProjectSummary>
-                )}
-
-                <ButtonsRow>
-                  {project.live && (
-                    <Button
-                      as="a"
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => {
-                        window.dataLayer?.push({ 
-                          event: 'click_project_demo',
-                          project_name: project.title
-                        });
-                      }}
-                    >
-                      <LiveIcon aria-hidden="true" />
-                      <span>Live demo</span>
-                    </Button>
-                  )}
-
-                  {project.code && (
-                    <Button
-                      as="a"
-                      href={project.code}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => {
-                        window.dataLayer?.push({ 
-                          event: 'click_project_code',
-                          project_name: project.title
-                        });
-                      }}
-                    >
-                      <CodeIcon aria-hidden="true" />
-                      <span>View code</span>
-                    </Button>
-                  )}
-                </ButtonsRow>
-              </ProjectContent>
-            </ProjectRow>
+            <AnimatedProjectRow key={project.id} project={project} index={index} />
           ))}
         </ProjectsList>
-
         {hasMoreProjects && (
           <SeeMoreButton
             onClick={() => setShowAll((prev) => !prev)}

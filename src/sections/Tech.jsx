@@ -2,6 +2,7 @@
 import styled from "styled-components";
 import techStack from "../data/tech-stack.json";
 import { media } from "../data/media.js";
+import { useInView } from "../hooks/useInView.js";
 
 // ---- STYLES ----
 const Wrap = styled.section`
@@ -10,7 +11,6 @@ const Wrap = styled.section`
   align-items: center;
   padding: 128px 80px;
   gap: 64px;
-
   color: #2D2D2D;
 
   @media ${media.tablet} {
@@ -24,17 +24,12 @@ const Wrap = styled.section`
 
 const Title = styled.h2`
   margin: 0;
-  font-size: 72px;
+  font-size: clamp(40px, 5vw, 60px);
   font-weight: 700;
   text-align: center;
-
-  @media ${media.tablet} {
-    font-size: 56px;
-  }
-
-  @media ${media.mobile} {
-    font-size: 40px;
-  }
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(24px)")};
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 `;
 
 const CategoriesGrid = styled.div`
@@ -43,6 +38,9 @@ const CategoriesGrid = styled.div`
   gap: 60px 80px;
   width: 100%;
   max-width: 1200px;
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(24px)")};
+  transition: opacity 0.7s ease-out 0.15s, transform 0.7s ease-out 0.15s;
 
   @media ${media.tablet} {
     grid-template-columns: 1fr;
@@ -117,18 +115,20 @@ const TechTag = styled.span`
 
 // ---- COMPONENT ----
 export const Tech = () => {
+  const [ref, inView] = useInView();
+
   const categoryLabels = {
     frontend: "Frontend",
     backend: "Backend",
     database: "Database",
     tools: "Tools",
-    digitalAnalytics: "Digital Analytics"
+    digitalAnalytics: "Digital Analytics",
   };
 
   return (
-    <Wrap id="tech">
-      <Title>Tech</Title>
-      <CategoriesGrid>
+    <Wrap id="skills" ref={ref}>
+      <Title $inView={inView}>Tech</Title>
+      <CategoriesGrid $inView={inView}>
         {Object.entries(techStack).map(([category, technologies]) => (
           <Category key={category}>
             <CategoryTitle>{categoryLabels[category]}</CategoryTitle>

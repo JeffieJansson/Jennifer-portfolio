@@ -3,8 +3,10 @@ import styled, { createGlobalStyle } from "styled-components";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { media } from "../data/media.js";
+import { useInView } from "../hooks/useInView.js";
 
 // Global styles for Mapbox
+
 const MapboxGlobalStyles = createGlobalStyle`
   .ping-marker {
     width: 16px;
@@ -13,7 +15,7 @@ const MapboxGlobalStyles = createGlobalStyle`
     border-radius: 50%;
     position: relative;
   }
-  
+
   .ping-marker::before {
     content: "";
     position: absolute;
@@ -22,7 +24,7 @@ const MapboxGlobalStyles = createGlobalStyle`
     background-color: #22c55e;
     animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
-  
+
   @keyframes ping {
     0% {
       transform: scale(1);
@@ -33,22 +35,22 @@ const MapboxGlobalStyles = createGlobalStyle`
       opacity: 0;
     }
   }
-  
+
   .mapboxgl-ctrl-logo {
     display: none !important;
   }
-  
+
   .mapboxgl-ctrl-group {
     background: rgba(255, 255, 255, 0.9) !important;
     border: 1px solid rgba(0, 0, 0, 0.1) !important;
     border-radius: 12px !important;
   }
-  
+
   .mapboxgl-ctrl-group button {
     background: transparent !important;
     border: none !important;
   }
-  
+
   .mapboxgl-ctrl-group button + button {
     border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
   }
@@ -88,12 +90,14 @@ const AboutWrapper = styled.section`
 `;
 
 const SectionTitle = styled.h2`
-  font-size: clamp(38px, 4vw, 54px);
+  font-size: clamp(40px, 5vw, 60px);
   color: #2D2D2D;
   text-align: center;
   margin: 0 auto;
   letter-spacing: -0.02em;
-  animation: fadeInUp 0.8s ease-out 0.05s backwards;
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(24px)")};
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 `;
 
 const ContentRow = styled.div`
@@ -120,7 +124,9 @@ const AboutContent = styled.div`
   font-size: 18px;
   font-weight: 400;
   line-height: 1.8;
-  animation: fadeInUp 0.8s ease-out 0.15s backwards;
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(24px)")};
+  transition: opacity 0.7s ease-out 0.15s, transform 0.7s ease-out 0.15s;
 
   p {
     margin: 0;
@@ -151,6 +157,9 @@ const MapCard = styled.div`
   flex-direction: column;
   gap: 12px;
   padding: 12px;
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(24px)")};
+  transition: opacity 0.7s ease-out 0.25s, transform 0.7s ease-out 0.25s;
 
   header {
     padding: 16px 18px 10px;
@@ -218,9 +227,9 @@ const WarmOverlay = styled.div`
   pointer-events: none;
 `;
 
-
 // ---- COMPONENT ----
 export const About = () => {
+  const [sectionRef, inView] = useInView();
   const mapContainer = useRef(null);
   const map = useRef(null);
 
@@ -262,21 +271,21 @@ export const About = () => {
   }, []);
 
   return (
-    <AboutWrapper id="about">
+    <AboutWrapper id="about" ref={sectionRef}>
       <MapboxGlobalStyles />
-      <SectionTitle>About</SectionTitle>
+      <SectionTitle $inView={inView}>About</SectionTitle>
       <ContentRow>
-        <AboutContent>
+        <AboutContent $inView={inView}>
           <p>
-          I’m a creative, curious, and data-driven frontend developer in training, drawn to the challenge of making digital experiences feel simple and intuitive.
-          My path has been anything but linear... from music and martial arts to logistics, customer service, and digital analytics. But every step taught me about people, focus, persistence, and how people interact with technology.
-          <br /><br />
-          
-          I realized I didn’t just want to understand digital experiences, I wanted to build them. That insight pushed me out of my comfort zone and into the world of code.
-          Today, I’m growing into a frontend developer who bridges the gap between data and code, with the goal of creating products that feel intuitive and deliver real value for real users.
+            I'm a creative, curious, and data-driven frontend developer in training, drawn to the challenge of making digital experiences feel simple and intuitive.
+            My path has been anything but linear — from music and martial arts to logistics, customer service, and digital analytics. But every step taught me about people, focus, persistence, and how people interact with technology.
+          </p>
+          <p>
+            I realized I didn't just want to understand digital experiences, I wanted to build them. That insight pushed me out of my comfort zone and into the world of code.
+            Today, I'm growing into a frontend developer who bridges the gap between data and code, with the goal of creating products that feel intuitive and deliver real value for real users.
           </p>
         </AboutContent>
-        <MapCard aria-label="Location map showing Tyresö, Sweden">
+        <MapCard $inView={inView} aria-label="Location map showing Tyresö, Sweden">
           <header>
             <h3>Based in Tyresö</h3>
             <span>Stockholm County, Sweden</span>
