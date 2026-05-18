@@ -1,35 +1,35 @@
 {
   "frontend": [
-    { "name": "HTML", "image":"/html.png" },
-    { "name": "CSS", "image": "/css.png" },
-    { "name": "JavaScript", "image": "/js.png" },
-    { "name": "React", "image": "/react.png" },
-    { "name": "Next.js", "image": "/next.webp" },
-    { "name": "Zustand", "image": "/zustand.svg" },
-    { "name": "Web Accessibility", "image": "/webacc.png" }
+    { "name": "HTML", "image":"/html.png", "pct": 80 },
+    { "name": "CSS", "image": "/css.png", "pct": 70 },
+    { "name": "JavaScript", "image": "/js.png", "pct": 75 },
+    { "name": "React", "image": "/react.png", "pct": 75 },
+    { "name": "Next.js", "image": "/next.webp", "pct": 70 },
+    { "name": "Zustand", "image": "/zustand.svg", "pct": 65 },
+    { "name": "Web Accessibility", "image": "/webacc.png", "pct": 60 }
   ],
   "backend": [
-    { "name": "Node.js", "image": "/node.png" },
-    { "name": "Express.js", "image": "/express.png" }
+    { "name": "Node.js", "image": "/node.png", "pct": 60 },
+    { "name": "Express.js", "image": "/express.png", "pct": 60 }
   ],
   "database": [
-    { "name": "MongoDB", "image": "/mongodb.svg" },
-    { "name": "localStorage", "image": "/ls.png" }
+    { "name": "MongoDB", "image": "/mongodb.svg", "pct": 65 },
+    { "name": "localStorage", "image": "/ls.png", "pct": 55 }
   ],
   "tools": [
-    { "name": "GitHub", "image": "/git.png" },
-    { "name": "VS Code", "image": "/vscode.png" },
-    { "name": "Postman", "image": "/postman.png" },
-    { "name": "Figma", "image": "/figma.png" }
+    { "name": "GitHub", "image": "/git.png", "pct": 80 },
+    { "name": "VS Code", "image": "/vscode.png", "pct": 85 },
+    { "name": "Postman", "image": "/postman.png", "pct": 75 },
+    { "name": "Figma", "image": "/figma.png", "pct": 45 }
 
   ],
   "digitalAnalytics": [
-    { "name": "BigQuery", "image": "/bigquery.png" },
-    { "name": "Looker Studio", "image": "/looker.svg" },
-    { "name": "Tag manager", "image": "/GTM.png" },
-    { "name": "Google Analytics", "image": "/GA4.png" },
-    { "name": "Google Search Console", "image": "/GSC.svg" },
-    { "name": "R-Studio", "image": "/rstudio.png" },
-    { "name": "SE Ranking", "image": "/seranking.png" }
+    { "name": "BigQuery", "image": "/bigquery.png", "pct": 20 },
+    { "name": "Looker Studio", "image": "/looker.svg", "pct": 55 },
+    { "name": "Tag manager", "image": "/GTM.png", "pct": 75 },
+    { "name": "Google Analytics", "image": "/GA4.png", "pct": 85 },
+    { "name": "Google Search Console", "image": "/GSC.svg", "pct": 65 },
+    { "name": "R-Studio", "image": "/rstudio.png", "pct": 45 },
+    { "name": "SE Ranking", "image": "/seranking.png", "pct": 30 }
   ]
 }

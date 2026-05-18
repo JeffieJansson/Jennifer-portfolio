@@ -3,30 +3,27 @@ import styled from "styled-components";
 import techStack from "../data/tech-stack.json";
 import { media } from "../data/media.js";
 import { useInView } from "../hooks/useInView.js";
+import { TechBadge } from "../components/TechBadge";
 
 // ---- STYLES ----
 const Wrap = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 128px 80px;
-  gap: 64px;
-  color: #2D2D2D;
+  padding: 80px 80px;
+  gap: 48px;
+  color: var(--cream);
 
-  @media ${media.tablet} {
-    padding: 96px 40px;
-  }
-
-  @media ${media.mobile} {
-    padding: 64px 24px;
-  }
+  @media ${media.tablet} { padding: 64px 40px; }
+  @media ${media.mobile} { padding: 48px 24px; }
 `;
 
 const Title = styled.h2`
   margin: 0;
   font-size: clamp(40px, 5vw, 60px);
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
+  letter-spacing: 0.05em;
   opacity: ${({ $inView }) => ($inView ? 1 : 0)};
   transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(24px)")};
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -35,80 +32,74 @@ const Title = styled.h2`
 const CategoriesGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px 80px;
+  gap: 48px 80px;
   width: 100%;
   max-width: 1200px;
   opacity: ${({ $inView }) => ($inView ? 1 : 0)};
   transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(24px)")};
   transition: opacity 0.7s ease-out 0.15s, transform 0.7s ease-out 0.15s;
 
-  @media ${media.tablet} {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  @media ${media.mobile} {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+  @media ${media.tablet} { grid-template-columns: 1fr; gap: 40px; }
+  @media ${media.mobile} { grid-template-columns: 1fr; gap: 32px; }
 `;
 
 const Category = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 `;
 
 const CategoryTitle = styled.h3`
-  font-size: 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
+  color: var(--gold);
   position: relative;
   padding-bottom: 12px;
-  color: #2D2D2D;
 
   &::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #D4A5A5 0%, #C4B5A0 100%);
-    border-radius: 2px;
-  }
-
-  @media ${media.mobile} {
-    font-size: 20px;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
   }
 `;
 
 const TechList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
 `;
 
 const TechTag = styled.span`
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
-  border-radius: 24px;
-  border: 1.5px solid #D4A5A5;
-  background: rgba(212, 165, 165, 0.16);
-  font-size: 16px;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--cream-dim);
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
 
   &:hover {
-    transform: translateY(-2px);
+    border-color: rgba(201, 169, 110, 0.5);
+    background: rgba(201, 169, 110, 0.06);
+    color: var(--cream);
   }
 
   img {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
   }
 `;
@@ -134,10 +125,7 @@ export const Tech = () => {
             <CategoryTitle>{categoryLabels[category]}</CategoryTitle>
             <TechList>
               {technologies.map((tech, index) => (
-                <TechTag key={`${category}-${index}`}>
-                  {tech.image && <img src={tech.image} alt={tech.name} />}
-                  {tech.name}
-                </TechTag>
+                <TechBadge key={`${category}-${index}`} tech={tech} />
               ))}
             </TechList>
           </Category>
