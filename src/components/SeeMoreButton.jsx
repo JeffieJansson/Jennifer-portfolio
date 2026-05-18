@@ -1,38 +1,45 @@
-// src/components/SeeMoreButton.jsx
 import styled from "styled-components";
 import { SeeMoreIcon } from "./Icons";
 
-// Wrapper 
 const SeeMoreButtonBase = styled.button`
-  display: flex;
-  width: 303px;
-  height: 48px;
-  gap: 16px;
-  padding: 0 16px;
+  display: inline-flex;
   align-items: center;
-  border-radius: 12px;
-  text-decoration: none;
-  font-size: 18px;
+  gap: 8px;
+  padding: 9px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  background: transparent;
+  color: var(--cream-dim);
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
   font-weight: 500;
-  color: #000;
-  background: #fff;
-  cursor: pointer;   
-  outline: 2px solid #000;         
-  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+
+  svg {
+    width: 13px;
+    height: 13px;
+    transition: transform 0.2s ease;
+  }
 
   &:hover {
-    background: #000;
-    color: #fff;       
+    background: var(--gold);
+    color: var(--bg);
+    border-color: var(--gold);
+
+    svg {
+      transform: translateY(2px);
+    }
   }
 `;
 
-
 export const SeeMoreButton = ({ label, ...props }) => {
-  return ( 
+  return (
     <SeeMoreButtonBase type="button" {...props}>
       <SeeMoreIcon />
-      <span className="sr-only">{label}</span>  {/* Screen reader only text */}
+      <span>{label}</span>
     </SeeMoreButtonBase>
   );
-
 };
