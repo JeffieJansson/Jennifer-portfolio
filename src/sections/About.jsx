@@ -5,13 +5,11 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { media } from "../data/media.js";
 import { useInView } from "../hooks/useInView.js";
 
-// Global styles for Mapbox
-
 const MapboxGlobalStyles = createGlobalStyle`
   .ping-marker {
-    width: 16px;
-    height: 16px;
-    background-color: #22c55e;
+    width: 14px;
+    height: 14px;
+    background-color: var(--gold);
     border-radius: 50%;
     position: relative;
   }
@@ -21,48 +19,41 @@ const MapboxGlobalStyles = createGlobalStyle`
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background-color: #22c55e;
+    background-color: var(--gold);
     animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
   @keyframes ping {
-    0% {
-      transform: scale(1);
-      opacity: 0.8;
-    }
-    75%, 100% {
-      transform: scale(2.5);
-      opacity: 0;
-    }
+    0%       { transform: scale(1); opacity: 0.7; }
+    75%, 100% { transform: scale(2.5); opacity: 0; }
   }
 
-  .mapboxgl-ctrl-logo {
-    display: none !important;
-  }
+  .mapboxgl-ctrl-logo { display: none !important; }
 
   .mapboxgl-ctrl-group {
-    background: rgba(255, 255, 255, 0.9) !important;
-    border: 1px solid rgba(0, 0, 0, 0.1) !important;
-    border-radius: 12px !important;
+    background: rgba(20, 20, 20, 0.9) !important;
+    border: 1px solid rgba(201, 169, 110, 0.2) !important;
+    border-radius: 8px !important;
   }
 
   .mapboxgl-ctrl-group button {
     background: transparent !important;
     border: none !important;
+    color: var(--cream) !important;
   }
 
   .mapboxgl-ctrl-group button + button {
-    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-top: 1px solid rgba(201, 169, 110, 0.1) !important;
   }
 `;
 
 // ---- STYLES ----
 const AboutWrapper = styled.section`
-  padding: 120px 80px;
+  padding: 80px 80px;
   background: transparent;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 40px;
   position: relative;
   overflow: hidden;
 
@@ -73,28 +64,28 @@ const AboutWrapper = styled.section`
     right: -150px;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(212, 165, 165, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(201, 169, 110, 0.05) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
   }
 
   @media ${media.tablet} {
-    padding: 80px 40px;
-    gap: 40px;
+    padding: 64px 40px;
+    gap: 36px;
   }
 
   @media ${media.mobile} {
-    padding: 60px 24px;
-    gap: 32px;
+    padding: 48px 24px;
+    gap: 28px;
   }
 `;
 
 const SectionTitle = styled.h2`
   font-size: clamp(40px, 5vw, 60px);
-  color: #2D2D2D;
+  color: var(--cream);
   text-align: center;
   margin: 0 auto;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.05em;
   opacity: ${({ $inView }) => ($inView ? 1 : 0)};
   transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(24px)")};
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -120,96 +111,74 @@ const AboutContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  color: #5A5A5A;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.8;
+  color: var(--cream-dim);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.85;
   opacity: ${({ $inView }) => ($inView ? 1 : 0)};
   transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(24px)")};
   transition: opacity 0.7s ease-out 0.15s, transform 0.7s ease-out 0.15s;
 
-  p {
-    margin: 0;
-  }
+  p { margin: 0; }
 
-  @media ${media.tablet} {
-    font-size: 16px;
-    line-height: 1.7;
-  }
-
-  @media ${media.mobile} {
-    font-size: 15px;
-    line-height: 1.6;
-  }
+  @media ${media.tablet} { font-size: 16px; }
+  @media ${media.mobile} { font-size: 15px; line-height: 1.7; }
 `;
 
 const MapCard = styled.div`
   flex: 1;
   min-width: 320px;
   max-width: 520px;
-  background: #00000096;
-  border-radius: 24px;
-  box-shadow: 0 20px 55px -24px rgba(18, 14, 14, 0.55);
-  border: 1px solid #e7dfd9;
+  background: var(--surface);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(201, 169, 110, 0.18);
   overflow: hidden;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 12px;
+  gap: 10px;
+  padding: 10px;
   opacity: ${({ $inView }) => ($inView ? 1 : 0)};
   transform: ${({ $inView }) => ($inView ? "translateY(0)" : "translateY(24px)")};
   transition: opacity 0.7s ease-out 0.25s, transform 0.7s ease-out 0.25s;
 
   header {
-    padding: 16px 18px 10px;
+    padding: 14px 16px 10px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    background: linear-gradient(135deg, #f8f5f9 0%, #fdfbfb 100%);
-    border-radius: 16px;
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    box-shadow: 0 10px 30px -18px rgba(18, 14, 14, 0.35);
+    gap: 3px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(201, 169, 110, 0.1);
   }
 
   h3 {
     margin: 0;
-    font-size: 18px;
-    color: #2d2d2d;
-    letter-spacing: -0.02em;
+    font-size: 16px;
+    color: var(--cream);
+    letter-spacing: 0.02em;
   }
 
   span {
-    font-size: 14px;
-    color: #6b6b6b;
+    font-size: 12px;
+    color: var(--cream-muted);
+    letter-spacing: 0.3px;
   }
 
-  @media ${media.tablet} {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  @media ${media.mobile} {
-    min-width: 100%;
-  }
+  @media ${media.tablet} { max-width: 100%; width: 100%; }
+  @media ${media.mobile} { min-width: 100%; }
 `;
 
 const MapFrame = styled.div`
   position: relative;
-  border-radius: 18px;
+  border-radius: 14px;
   overflow: hidden;
-  background: #ede7e1;
-  box-shadow: 0 14px 38px -24px rgba(18, 14, 14, 0.45);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  height: 320px;
+  background: #1a1a1a;
+  height: 300px;
 
-  @media ${media.tablet} {
-    height: 280px;
-  }
-
-  @media ${media.mobile} {
-    height: 240px;
-  }
+  @media ${media.tablet} { height: 260px; }
+  @media ${media.mobile} { height: 220px; }
 `;
 
 const MapContainer = styled.div`
@@ -217,14 +186,6 @@ const MapContainer = styled.div`
   inset: 0;
   width: 100%;
   height: 100%;
-  filter: saturate(0.8);
-`;
-
-const WarmOverlay = styled.div`
-  position: absolute;
-  inset: 0;
-  background: rgba(251, 191, 36, 0.04);
-  pointer-events: none;
 `;
 
 // ---- COMPONENT ----
@@ -245,7 +206,7 @@ export const About = () => {
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/mapbox/streets-v12",
+      style: "mapbox://styles/mapbox/dark-v11",
       center: TYRESO_COORDS,
       zoom: 9,
       attributionControl: false,
@@ -256,7 +217,6 @@ export const About = () => {
       "top-right"
     );
 
-    // Create ping marker element
     const ping = document.createElement("div");
     ping.className = "ping-marker";
 
@@ -292,7 +252,6 @@ export const About = () => {
           </header>
           <MapFrame>
             <MapContainer ref={mapContainer} />
-            <WarmOverlay />
           </MapFrame>
         </MapCard>
       </ContentRow>
