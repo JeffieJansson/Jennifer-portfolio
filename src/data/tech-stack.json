@@ -3,6 +3,7 @@
     { "name": "HTML", "image":"/html.png", "pct": 80 },
     { "name": "CSS", "image": "/css.png", "pct": 70 },
     { "name": "JavaScript", "image": "/js.png", "pct": 75 },
+    { "name": "TypeScript", "image": "/ts.png", "pct": 45 },
     { "name": "React", "image": "/react.png", "pct": 75 },
     { "name": "Next.js", "image": "/next.webp", "pct": 70 },
     { "name": "Zustand", "image": "/zustand.svg", "pct": 65 },
