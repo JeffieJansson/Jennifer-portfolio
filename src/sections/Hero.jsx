@@ -73,9 +73,10 @@ const IntroText = styled.div`
   h1 {
     font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 500;
-    line-height: 1.05;
-    margin: 0 0 16px 0;
+    line-height: 1.2;
     letter-spacing: -0.01em;
+    padding-left: 0.08em;
+    margin-left: -0.08em;
     background: linear-gradient(135deg, var(--cream) 0%, var(--gold-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
